@@ -1,0 +1,113 @@
+body {
+    margin: 0px;
+    font-family: 'Alfa Slab One', cursive;
+    color: white;
+    font-size: larger;
+    
+    
+}
+
+.playing-field {
+    background-image: url(./assets/home.png);
+    background-position: 50%;
+    display: flex;
+    margin: 0px;
+    min-height: 100vh;
+    background-size: cover;
+    
+}
+
+/******* Cards change ********/
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 40%;
+    gap: 15px;
+    padding: 20px;
+    
+}
+
+.first-card {
+    display: block;
+    background-image: url(./assets/Ancients/Azathoth.png);
+    height: 260px;
+    width: 200px;
+    box-sizing: border-box;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+.second-card {
+    display: block;
+    background-image: url(./assets/Ancients/IogSothoth.png);
+    height: 260px;
+    width: 200px;
+    box-sizing: border-box;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+.third-card {
+    display: block;
+    background-image: url(./assets/Ancients/Cthulthu.png);
+    height: 260px;
+    width: 200px;
+    box-sizing: border-box;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+.fourth-card {
+    display: block;
+    background-image: url(./assets/Ancients/ShubNiggurath.png);
+    box-sizing:border-box;
+    height: 260px;
+    width: 200px;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+/*****  Difficulty level ********/
+
+
+p {
+    margin: 5px;
+    
+    
+}
+
+p:hover {
+    border-bottom: 3px solid white;
+    cursor: pointer;
+}
+
+.difficulty-level {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 20%;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.very-easy {
+
+}
+
+.easy {
+    
+}
+
+.normal {
+
+}
+
+.high {
+
+}
+
+.very-high {
+
+}
