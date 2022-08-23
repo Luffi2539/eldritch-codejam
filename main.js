@@ -1,7 +1,5 @@
 // import difficulties from './dacardsDataGreenta/difficulties.js';
 
-// console.log(difficulties)
-
 
 import cardsDataBlue from './data/mythicCards/blue/index.js';
 console.log('cardsDataBlue', cardsDataBlue)
@@ -14,11 +12,8 @@ import ancientsData from './data/ancients.js';
 console.log('ancientsData', ancientsData)
 
 
-
 let ancientItem = 0;
 // let difficultItem = 1;
-
-
 
 
 document.querySelector('.game__card-item').style.backgroundImage = 'url(../assets/MythicCards/blue/blue5.png)'
@@ -31,7 +26,6 @@ document.querySelector('.game__card-item').style.backgroundImage = 'url(../asset
 
 document.querySelector('.ancients').addEventListener('click', (e)=> {
     removeAncientsItemActive();
-
     
     if (e.target.classList.contains('ancients__item')) {
 
@@ -67,8 +61,6 @@ const removeAncientsItemActive = () => {
     })
 }
 
-
-
 // END Сhoice Ancients
 
 // const addTagsClickHandler = () => {
@@ -87,7 +79,6 @@ const removeAncientsItemActive = () => {
 // }
 
 
-
 // let ancientItem = 0;
 // let difficultItem = 1;
 
@@ -95,9 +86,31 @@ const removeAncientsItemActive = () => {
 let greenArray = [];
 let brownArray = [];
 let bluArray = [];
+let matrix = [
+    [],
+    [],
+    [],
+]
+// Создание матрицы
 
+ancientItem = 1;
+createMatrix(ancientItem)
+
+function createMatrix (ancient) {
+    matrix[0] = Object.values(ancientsData[ancient].firstStage);
+    matrix[1] = Object.values(ancientsData[ancient].secondStage);
+    matrix[2] = Object.values(ancientsData[ancient].thirdStage);
+
+}
+
+
+console.log('matrix',matrix)
+// Конец матрицы
 
 function sortArray (ancient, difficult) {
+
+
+
         let greenArrayEasy = [];
         let greenArrayNormal = [];
         let greenArrayHard = [];      
@@ -134,7 +147,6 @@ function sortArray (ancient, difficult) {
         addArrayWithDifficult(cardsDataBrown, brownArrayEasy, 'easy');
         addArrayWithDifficult(cardsDataBrown, brownArrayNormal, 'normal');
         addArrayWithDifficult(cardsDataBrown, brownArrayHard, 'hard');
-
 
         // console.log('greenArray88888', greenArrayEasy)
         // console.log('greenArray9999', greenArrayNormal)
@@ -181,11 +193,9 @@ function sortArray (ancient, difficult) {
         lengthСheckArray(greenCards, greenArray);
         lengthСheckArray(brownCards, brownArray);
         lengthСheckArray(blueCards, bluArray);
-
-
     
 }
-sortArray(0,5)
+sortArray(0,1)
 
             console.log('greenArray', greenArray)
             console.log('bluArray', bluArray)
