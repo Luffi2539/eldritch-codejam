@@ -1,0 +1,180 @@
+body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+}
+
+.background {
+  position: relative;
+  min-height: 100%;
+  transition: 0.5s;
+  background-image: url(./assets/Background/background.jpg);
+  background-position: 50% 100%;
+  background-size: cover;
+}
+
+.water {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./assets/Rain/water.png);
+  -webkit-animation: water 0.3s linear infinite;
+          animation: water 0.3s linear infinite;
+  padding: 15px;
+}
+
+@-webkit-keyframes water {
+  0% {
+    background-position: -10% -100%;
+  }
+  100% {
+    background-position: 10% 100%;
+  }
+}
+
+@keyframes water {
+  0% {
+    background-position: -10% -100%;
+  }
+  100% {
+    background-position: 10% 100%;
+  }
+}
+.ancient-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 35vw;
+}
+.ancient-cards img {
+  padding: 10px;
+  opacity: 0.7;
+  border-radius: 30px;
+  cursor: pointer;
+  transition-duration: 1s;
+  border: 20px solid transparent;
+  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
+     border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
+}
+.ancient-cards img:hover {
+  opacity: 1;
+  transition-duration: 1s;
+  border: 10px solid transparent;
+  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/2/0 stretch;
+     border-image: url(/assets/Gif/fire-65.gif) 47%/2/0 stretch;
+}
+
+.difficulty {
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  background-image: url(./assets/mythicCardBackground.png);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  transition-duration: 1s;
+  cursor: pointer;
+  border: 5px solid transparent;
+  border-radius: 10px;
+  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
+     border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
+}
+.difficulty:hover {
+  opacity: 1;
+  transition-duration: 1s;
+  border: 10px solid transparent;
+  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
+     border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
+}
+.difficulty:not(:last-child) {
+  margin-bottom: 15px;
+}
+.difficulty_level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.deck-of-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 100px;
+  padding-left: 100px;
+  max-width: 35vw;
+}
+
+.stages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stages__title {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: white;
+  font-size: 20px;
+}
+.stages__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stages__quantity input {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+  pointer-events: none;
+}
+.stages__quantity input:not(:last-child) {
+  margin-right: 10px;
+}
+
+.green {
+  background-color: green;
+}
+
+.brown {
+  background-color: brown;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.working {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inverted-deck {
+  margin-right: 50px;
+}
+.inverted-deck .deck {
+  border-radius: 30px;
+  opacity: 0.8;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+.inverted-deck .deck:hover {
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.random-card {
+  width: 200px;
+  height: 280px;
+  border: 1px solid red;
+  border-radius: 30px;
+  opacity: 0.8;
+}/*# sourceMappingURL=style.css.map */

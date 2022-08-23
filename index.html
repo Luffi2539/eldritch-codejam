@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./nullstyle.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Codejam</title>
+</head>
+
+<body>
+    <audio class="rain" src="./assets/Audio/01890.mp3" autoplay loop></audio>
+    <div class="background">
+        <div class="water">
+            <section class="ancient-cards">
+                <img class="card1" src="./assets/Ancients/Cthulthu.png" width="250" height="330" alt="Cthulthu">
+                <img class="card2" src="./assets/Ancients/ShubNiggurath.png" width="250" height="330" alt="ShubNiggurath">
+                <img class="card3" src="./assets/Ancients/IogSothoth.png" width="250" height="330" alt="IogSothoth">
+                <img class="card4" src="./assets/Ancients/Azathoth.png" width="250" height="330" alt="Azathoth">
+            </section>
+
+            <section class="difficulty_level">
+                <div class="difficulty very-easy">Очень легкий</div>
+                <div class="difficulty easy">Легкий</div>
+                <div class="difficulty simple">Обычная</div>
+                <div class="difficulty hard">Высокий</div>
+                <div class="difficulty very-hard">Очень высокий</div>
+            </section>
+
+            <section class="deck-of-cards">
+                <div class="working-stages">
+                    <div class="stages">
+                        <div class="stages__title">Первая стадия</div>
+                        <div class="stages__quantity">
+                            <input class="first green" type="text" value="0">
+                            <input class="first brown" type="text" value="0">
+                            <input class="first blue" type="text" value="0">
+                        </div>
+                    </div>
+                    <div class="stages">
+                        <div class="stages__title">Вторая стадия</div>
+                        <div class="stages__quantity">
+                            <input class="second green" type="text" value="0">
+                            <input class="second brown" type="text" value="0">
+                            <input class="second blue" type="text" value="0">
+                        </div>
+                    </div>
+                    <div class="stages">
+                        <div class="stages__title">Третья стадия</div>
+                        <div class="stages__quantity">
+                            <input class="third green" type="text" value="0">
+                            <input class="third brown" type="text" value="0">
+                            <input class="third blue" type="text" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="working">
+                    <div class="inverted-deck">
+                        <img class="deck" src="./assets/mythicCardBackground.png" alt="mythicCardBackground" width="200" height="280" >
+                    </div>
+                    <div class="random-card">
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
