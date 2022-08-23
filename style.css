@@ -1,0 +1,140 @@
+body {
+  background: url(./assets/home.png) no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* LEFT */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 150px;
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.card.active {
+  border: 2px solid red;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.azathoth {
+  background-image: url(./assets/Ancients/Azathoth.png);
+}
+
+.cthulthu {
+  background-image: url(./assets/Ancients/Cthulthu.png);
+}
+
+.iogSothoth {
+  background-image: url(./assets/Ancients/IogSothoth.png);
+}
+
+.shubNiggurath {
+  background-image: url(./assets/Ancients/ShubNiggurath.png);
+}
+
+/* CENTER */
+
+.difficulty-selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.difficulty {
+  color: white;
+  border: 1px solid white;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.difficulty.active {
+  background-color: red;
+}
+
+.difficulty:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+/* RIGHT */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-stage {
+  color: white;
+}
+
+.stage {
+  display: flex;
+}
+
+.number-of-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  color: white;
+}
+
+.number-of-cards:not(:last-child) {
+  margin-right: 15px;
+}
+
+.green-cards {
+  background-color: green;
+}
+
+.red-cards {
+  background-color: red;
+}
+
+.blue-cards {
+  background-color: blue;
+}
+
+.shuffle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  padding: 15px;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.deck {
+  background-image: url(./assets/mythicCardBackground.png);
+}
+
+.last-card {
+  background-image: url(./assets/MythicCards/blue/blue1.png);
+  cursor: auto;
+}

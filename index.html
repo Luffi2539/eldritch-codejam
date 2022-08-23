@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eldritch Horror</title>
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="cards">
+          <div class="card azathoth active"></div>
+          <div class="card cthulthu"></div>
+          <div class="card iogSothoth"></div>
+          <div class="card shubNiggurath"></div>
+        </div>
+      </div>
+      <div class="center">
+        <div class="difficulty-selection">
+          <div class="difficulty very-easy">Очень легкий уровень</div>
+          <div class="difficulty easy">Легкий уровень</div>
+          <div class="difficulty medium active">Средний уровень</div>
+          <div class="difficulty hard">Высокий уровень</div>
+          <div class="difficulty very-hard">Очень высокий уровень</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="stages">
+          <p class="header-stage">Первая стадия</p>
+          <div class="stage stage-1">
+            <div class="number-of-cards green-cards">1</div>
+            <div class="number-of-cards red-cards">1</div>
+            <div class="number-of-cards blue-cards">1</div>
+          </div>
+          <p class="header-stage">Вторая стадия</p>
+          <div class="stage stage-2">
+            <div class="number-of-cards green-cards">1</div>
+            <div class="number-of-cards red-cards">1</div>
+            <div class="number-of-cards blue-cards">1</div>
+          </div>
+          <p class="header-stage">Третья стадия</p>
+          <div class="stage stage-3">
+            <div class="number-of-cards green-cards">1</div>
+            <div class="number-of-cards red-cards">1</div>
+            <div class="number-of-cards blue-cards">1</div>
+          </div>
+        </div>
+        <div class="shuffle-button">Замешать колоду</div>
+        <div class="card deck"></div>
+        <div class="card last-card"></div>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
