@@ -1,0 +1,37 @@
+.ancients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 450px;
+    // flex-basis: 30%;
+}
+.ancients__item{
+    height: 260px;
+    width: 200px;
+    cursor: pointer;
+    @media  screen and (max-width: 760px) {
+        height: 182px;
+        width: 140px;
+    }
+    &:hover {
+        transform: scale(1.05);
+        border: solid 1px red;
+       }
+}
+
+.ancients__item_1 { 
+    background: url(../assets/Ancients/Azathoth.png) no-repeat;
+    background-size: contain;
+}
+.ancients__item_2 {
+    background: url(../assets/Ancients/Cthulthu.png);
+    background-size: contain;
+}
+.ancients__item_3 {
+    background: url(../assets/Ancients/IogSothoth.png);
+    background-size: contain;
+}
+.ancients__item_4 {
+    background: url(../assets/Ancients/ShubNiggurath.png);
+    background-size: contain;
+}

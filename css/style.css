@@ -1,8 +1,142 @@
-body {
+.ancients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 450px;
+}
+
+.ancients__item {
+  height: 260px;
+  width: 200px;
+  cursor: pointer;
+}
+@media screen and (max-width: 760px) {
+  .ancients__item {
+    height: 182px;
+    width: 140px;
+  }
+}
+.ancients__item:hover {
+  transform: scale(1.05);
+  border: solid 1px red;
+}
+
+.ancients__item_1 {
+  background: url(../assets/Ancients/Azathoth.png) no-repeat;
+  background-size: contain;
+}
+
+.ancients__item_2 {
+  background: url(../assets/Ancients/Cthulthu.png);
+  background-size: contain;
+}
+
+.ancients__item_3 {
+  background: url(../assets/Ancients/IogSothoth.png);
+  background-size: contain;
+}
+
+.ancients__item_4 {
+  background: url(../assets/Ancients/ShubNiggurath.png);
+  background-size: contain;
+}
+
+.difficulty-selection {
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.difficulty-selection__item {
+  max-width: 150px;
+  background-color: rgb(138, 143, 143);
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+.difficulty-selection__item:hover {
+  transform: scale(1.1);
+  background-color: rgb(119, 106, 113);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game__table {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+.game__table__stage {
+  font-style: italic;
+}
+
+.game__table__wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game__table__stack {
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+
+.game__table__stack_1 {
+  background-color: green;
+}
+
+.game__table__stack_2 {
+  background-color: brown;
+}
+
+.game__table__stack_3 {
+  background-color: blue;
+}
+
+.game__card-background {
+  height: 228px;
+  width: 156px;
+  background: url(../assets/mythicCardBackground.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.game__card-item {
+  height: 228px;
+  width: 156px;
+  background: url(../assets/MythicCards/blue/blue1.png);
+  background-size: cover;
+}
+
+.body {
   margin: 0;
   height: 100vh;
   width: 100%;
   background: url(../assets/home.png) no-repeat;
   background-position: 50%;
   background-size: cover;
+  color: white;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+.wrapper-game {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
 }/*# sourceMappingURL=style.css.map */

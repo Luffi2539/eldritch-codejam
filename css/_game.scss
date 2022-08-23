@@ -1,0 +1,62 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.game__table {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+
+.game__table__stage {
+    font-style: italic;
+}
+
+.game__table__wrapper {
+    display: flex;
+    justify-content: space-around;
+
+
+}
+.game__table__stack {
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+}
+.game__table__stack_1 {
+    background-color: green;
+}
+.game__table__stack_2 {
+    background-color: brown;
+}
+.game__table__stack_3 {
+    background-color: blue;
+}
+
+
+
+.game__card-background {
+    height: 228px;
+    width: 156px;
+    background: url(../assets/mythicCardBackground.png);
+    background-size: cover;
+    cursor: pointer;
+
+}
+.game__card-item {
+    height: 228px;
+    width: 156px;
+    background: url(../assets/MythicCards/blue/blue1.png);
+    background-size: cover;
+}
+
+
+
+

@@ -1,14 +1,27 @@
-body {
+@import "ancients";
+@import "difficulty";
+@import "game";
+
+.body {
     margin: 0;
     height: 100vh;
     width: 100%;
     background: url(../assets/home.png) no-repeat;
     background-position: 50%;
     background-size: cover;
-
-
-
-
-    // background: url(../assets/home.png) center no-repeat;
-    // background-size: 100% auto;
+    color: white;
+    font-size: 20px;
+    box-sizing: border-box;
 }
+
+
+.wrapper-game {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+
+

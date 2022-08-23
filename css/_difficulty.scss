@@ -1,0 +1,20 @@
+.difficulty-selection {
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+
+}
+.difficulty-selection__item {
+    max-width: 150px;
+   background-color: rgb(138, 143, 143);
+   border-radius: 5px;
+   padding: 2px 5px;
+   cursor: pointer;
+   &:hover {
+    transform: scale(1.1);
+    background-color: rgb(119, 106, 113);
+   }
+   
+}
