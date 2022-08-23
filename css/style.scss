@@ -1,6 +1,10 @@
+$color-hover: rgb(83, 245, 105);
+
 @import "ancients";
 @import "difficulty";
 @import "game";
+
+
 
 .body {
     margin: 0;
@@ -18,7 +22,7 @@
 .wrapper-game {
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0 40px;
 }

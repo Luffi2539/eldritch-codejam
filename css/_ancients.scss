@@ -15,8 +15,12 @@
     }
     &:hover {
         transform: scale(1.05);
-        border: solid 1px red;
+        border: solid 1px $color-hover;
        }
+}
+
+.ancients__item_active {
+    border: solid 1px red;
 }
 
 .ancients__item_1 { 

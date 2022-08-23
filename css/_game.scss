@@ -48,6 +48,11 @@
     background: url(../assets/mythicCardBackground.png);
     background-size: cover;
     cursor: pointer;
+    &:hover {
+        height: 226px;
+        width: 154px;
+        border: solid 1px $color-hover;
+       }
 
 }
 .game__card-item {

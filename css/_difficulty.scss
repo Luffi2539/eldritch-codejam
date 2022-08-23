@@ -15,6 +15,12 @@
    &:hover {
     transform: scale(1.1);
     background-color: rgb(119, 106, 113);
+    border: solid 1px $color-hover;
    }
    
+}
+
+.difficulty-selection__item_active {
+    border: solid 1px red;
+    background-color: rgb(119, 106, 113);
 }
