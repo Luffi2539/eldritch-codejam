@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    border-width: 0;
+    justify-content: center;
+  }
+
+html {
+    scroll-behavior: smooth; 
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    background: url('./assets/home.png') ;
+    background-position: top;
+    font-size: 20px;
+}
+
+.wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    gap: 20px;
+
+}
+
+.difficulty-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-width: 20%;
+}
+.difficulty-container .difficult {
+    border: 1px solid rgb(41, 141, 154);
+    box-sizing: border-box;
+    color: rgb(93, 186, 198);
+    cursor: pointer;
+    padding: 10px 55px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(rgb(41, 141, 154, 0.5), rgb(28, 27, 27, 0.5));
+    margin: 10px 0;
+}
+
+.ancients-container .ancient-card {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 300px;
+    width: 250px;
+}
+
+.ancients-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-width: 45%;
+    padding: 20px;
+    margin-top: 10%;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) */
+}
+
+.card-1 {
+    background: url('./assets/Ancients/Azathoth.png');
+}
+.card-2 {
+    background: url('./assets/Ancients/Cthulthu.png');
+}
+.card-3 {
+    background: url('./assets/Ancients/IogSothoth.png');
+}
+.card-4 {
+    background: url('./assets/Ancients/ShubNiggurath.png');
+}
+
+
+
+.deck-container {
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    min-width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.current-state .stage-container .deck-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stage-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dots-container {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.deck-container .current-state .stage-container .dot.green {
+    background-color: rgb(117, 226, 58, 0.8);
+    background: linear-gradient(rgb(117, 226, 58, 0.8),rgba(55, 107, 28, 0.8));
+    border: 1px solid rgba(128, 223, 78, 0.8);
+}
+
+.deck-container .current-state .stage-container .dot.brown {
+    background: linear-gradient(rgba(255, 141, 2, 0.89), rgba(240, 58, 8, 0.832));
+    border: 1px solid rgb(219, 121, 24);
+}
+
+.deck-container .current-state .stage-container .dot.blue {
+    background: linear-gradient(rgb(41, 141, 154, 0.8), rgba(23, 80, 87, 0.8));
+    border: 1px solid rgb(41, 141, 154);
+}
+
+.deck-container .current-state .stage-container .dot {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+}
+
+.deck-container .current-state .stage-container .stage-text  {
+    color: rgb(93, 186, 198);
+    margin: 10px 0;
+}
+.deck-container .current-state .stage-container .stage-text.done  {
+    color: rgb(149, 198, 93);
+}
+
+.shuffle-button {
+    border: 1px solid rgb(41, 141, 154);
+    box-sizing: border-box;
+    color: rgb(93, 186, 198);
+    cursor: pointer;
+    padding: 10px 55px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(rgb(41, 141, 154, 0.5), rgb(28, 27, 27, 0.5));
+    margin: 10px 0;
+}
+
+.deck {
+    background: url('./assets/mythicCardBackground.png');
+    background-size: cover;
+    height: 190px;
+    width: 130px;
+}
+
+.last-card {
+    height: 190px;
+    width: 130px;
+}
