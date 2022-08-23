@@ -2,7 +2,7 @@
 
 const greenCardsAssets = {};
 
-for (let index = 1; index < 18; index++) {
+for (let index = 1; index < 19; index++) {
   greenCardsAssets[`green${index}`] = `url(../assets/MythicCards/green/green${index}.png)`;
 };
 
