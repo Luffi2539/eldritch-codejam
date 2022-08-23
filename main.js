@@ -1,26 +1,63 @@
 // import difficulties from './dacardsDataGreenta/difficulties.js';
 
-
 import cardsDataBlue from './data/mythicCards/blue/index.js';
-console.log('cardsDataBlue', cardsDataBlue)
+// console.log('cardsDataBlue', cardsDataBlue)
 import cardsDataBrown from './data/mythicCards/brown/index.js';
-console.log('cardsDataBrown', cardsDataBrown)
+// console.log('cardsDataBrown', cardsDataBrown)
 import cardsDataGreen from './data/mythicCards/green/index.js';
-console.log('cardsDataGreen', cardsDataGreen)
+// console.log('cardsDataGreen', cardsDataGreen)
 
 import ancientsData from './data/ancients.js';
-console.log('ancientsData', ancientsData)
+// console.log('ancientsData', ancientsData)
 
+let greenArray = [];
+let brownArray = [];
+let bluArray = [];
+let matrix = [
+    [],
+    [],
+    [],
+];
 
+const gameTableStack = document.querySelectorAll('.game__table__stack');
 let ancientItem = 0;
-// let difficultItem = 1;
+let difficult = 1;
+
+createMatrix(ancientItem);
+addgameTableStack(matrix);
+sortArray (ancientItem, difficult)
+
+// START game__table
+
+function addgameTableStack(matrix) {
+    let i = 0
+    matrix.forEach(element => {
+    element.forEach(e => {
+        gameTableStack[i].textContent = e;
+        i++
+    });
+});
+}
+
+// End game__table
+
+// Создание матрицы
+
+function createMatrix (ancient) {
+    matrix[0] = Object.values(ancientsData[ancient].firstStage);
+    matrix[1] = Object.values(ancientsData[ancient].secondStage);
+    matrix[2] = Object.values(ancientsData[ancient].thirdStage);
+}
+
+// Конец матрицы
+
+console.log('greenArray',greenArray);
+console.log('brownArray',brownArray);
+console.log('bluArray',bluArray);
+console.log('matrix',matrix);
 
 
-document.querySelector('.game__card-item').style.backgroundImage = 'url(../assets/MythicCards/blue/blue5.png)'
-// document.querySelector('.game__card-item').style.backgroundSize = 'cover'
-
-// background: url(../assets/MythicCards/blue/blue1.png);
-
+// document.querySelector('.game__card-item').style.backgroundImage = 'url(../assets/MythicCards/blue/blue5.png)'
 
 // START Сhoice Ancients
 
@@ -32,29 +69,33 @@ document.querySelector('.ancients').addEventListener('click', (e)=> {
             let classes = e.target.classList;
             if(classes.contains('ancients__item_1')) {
                 ancientItem = 0;
-                document.querySelector('.ancients__item_1').classList.add('ancients__item_active');              console.log(1)
+                document.querySelector('.ancients__item_1').classList.add('ancients__item_active');
             }
             if(classes.contains('ancients__item_2')) {
                 ancientItem = 1;
-                document.querySelector('.ancients__item_2').classList.add('ancients__item_active');              console.log(1)
-
+                document.querySelector('.ancients__item_2').classList.add('ancients__item_active');
             }
             if(classes.contains('ancients__item_3')) {
                 ancientItem = 2;
-                document.querySelector('.ancients__item_3').classList.add('ancients__item_active');              console.log(1)
-
+                document.querySelector('.ancients__item_3').classList.add('ancients__item_active');
             }
             if(classes.contains('ancients__item_4')) {
                 ancientItem = 3;
-                document.querySelector('.ancients__item_4').classList.add('ancients__item_active');              console.log(1)
-
+                document.querySelector('.ancients__item_4').classList.add('ancients__item_active');
             }
         }
 
+        createMatrix(ancientItem);
+        addgameTableStack(matrix);
+        sortArray (ancientItem, difficult);
+
+        console.log('greenArray',greenArray);
+        console.log('brownArray',brownArray);
+        console.log('bluArray',bluArray);
 
 });
 
-const removeAncientsItemActive = () => {
+function removeAncientsItemActive () {
     let items = document.querySelectorAll('.ancients__item');
     items.forEach(item => {
         item.classList.remove('ancients__item_active');
@@ -63,53 +104,63 @@ const removeAncientsItemActive = () => {
 
 // END Сhoice Ancients
 
-// const addTagsClickHandler = () => {
-//     document.querySelector('.strategies__tags').addEventListener('click', (e) => {
-//         if (e.target.classList.contains('tag')) {
-//             let clickedTag = e.target;
-//             removeSelectedTags();
-//             selectClickedTag(clickedTag);
-//             if (clickedTag.innerText === 'All') {
-//                 showAllStrategies();
-//             } else {
-//                 filterStrategyBySelectedTag(clickedTag.innerText);
-//             }
-//         }
-//     })
-// }
+// START Сhoice difficult
 
 
-// let ancientItem = 0;
-// let difficultItem = 1;
+document.querySelector('.difficulty-selection').addEventListener('click', (e)=> {
+    removeDifficultyItemActive();
+    
+    if (e.target.classList.contains('difficulty-selection__item')) {
 
-// START MAIN SORT
-let greenArray = [];
-let brownArray = [];
-let bluArray = [];
-let matrix = [
-    [],
-    [],
-    [],
-]
-// Создание матрицы
+            let classes = e.target.classList;
+            if(classes.contains('difficulty-selection__item_1')) {
+                difficult = 1;
+                document.querySelector('.difficulty-selection__item_1').classList.add('difficulty-selection__item_active');
+            }
+            if(classes.contains('difficulty-selection__item_2')) {
+                difficult = 2;
+                document.querySelector('.difficulty-selection__item_2').classList.add('difficulty-selection__item_active');
+            }
+            if(classes.contains('difficulty-selection__item_3')) {
+                difficult = 3;
+                document.querySelector('.difficulty-selection__item_3').classList.add('difficulty-selection__item_active');
+            }
+            if(classes.contains('difficulty-selection__item_4')) {
+                difficult = 4;
+                document.querySelector('.difficulty-selection__item_4').classList.add('difficulty-selection__item_active');
+            }
+            if(classes.contains('difficulty-selection__item_5')) {
+                difficult = 5;
+                document.querySelector('.difficulty-selection__item_5').classList.add('difficulty-selection__item_active');
+            }
+        }
+        console.log(difficult);
 
-ancientItem = 1;
-createMatrix(ancientItem)
+        sortArray (ancientItem, difficult)
+        createMatrix(ancientItem);
 
-function createMatrix (ancient) {
-    matrix[0] = Object.values(ancientsData[ancient].firstStage);
-    matrix[1] = Object.values(ancientsData[ancient].secondStage);
-    matrix[2] = Object.values(ancientsData[ancient].thirdStage);
+        console.log('greenArray',greenArray);
+        console.log('brownArray',brownArray);
+        console.log('bluArray',bluArray);
 
+});
+
+function removeDifficultyItemActive () {
+    let items = document.querySelectorAll('.difficulty-selection__item');
+    items.forEach(item => {
+        item.classList.remove('difficulty-selection__item_active');
+    })
 }
 
 
-console.log('matrix',matrix)
-// Конец матрицы
+// END Сhoice difficult
+
+
+// START MAIN SORT
+
+
 
 function sortArray (ancient, difficult) {
-
-
 
         let greenArrayEasy = [];
         let greenArrayNormal = [];
@@ -124,17 +175,14 @@ function sortArray (ancient, difficult) {
         let greenCards = ancientsData[ancient].firstStage.greenCards
         + ancientsData[ancient].secondStage.greenCards
         + ancientsData[ancient].thirdStage.greenCards;
-        console.log('greenCards', greenCards)
 
         let blueCards = ancientsData[ancient].firstStage.blueCards
         + ancientsData[ancient].secondStage.blueCards
         + ancientsData[ancient].thirdStage.blueCards;
-        console.log('blueCards', blueCards)
 
         let brownCards = ancientsData[ancient].firstStage.brownCards
         + ancientsData[ancient].secondStage.brownCards
         + ancientsData[ancient].thirdStage.brownCards;
-        console.log('brownCards', brownCards)
 
         addArrayWithDifficult(cardsDataGreen, greenArrayEasy, 'easy');
         addArrayWithDifficult(cardsDataGreen, greenArrayNormal, 'normal');
@@ -147,14 +195,6 @@ function sortArray (ancient, difficult) {
         addArrayWithDifficult(cardsDataBrown, brownArrayEasy, 'easy');
         addArrayWithDifficult(cardsDataBrown, brownArrayNormal, 'normal');
         addArrayWithDifficult(cardsDataBrown, brownArrayHard, 'hard');
-
-        // console.log('greenArray88888', greenArrayEasy)
-        // console.log('greenArray9999', greenArrayNormal)
-        // console.log('greenArray1010101', greenArrayHard)
-        // console.log('greenArray88888', brownArrayEasy)
-        // console.log('greenArray9999', brownArrayNormal)
-        // console.log('greenArray1010101', brownArrayHard)
-
 
         if (difficult === 1) {
             greenArray = [...greenArrayEasy,...greenArrayNormal];
@@ -173,6 +213,14 @@ function sortArray (ancient, difficult) {
             greenArray = [...greenArrayEasy,...greenArrayNormal,...greenArrayHard];
             brownArray = [...brownArrayEasy,...brownArrayNormal,...brownArrayHard];
             bluArray = [...bluArrayEasy,...bluArrayNormal,...bluArrayHard];
+
+        console.log('bluArray',bluArray);
+
+
+            shuffle(greenArray);
+            shuffle(brownArray);
+            shuffle(bluArray);
+            console.log('bluArray',bluArray);
 
         }
         if (difficult === 4) {
@@ -193,13 +241,13 @@ function sortArray (ancient, difficult) {
         lengthСheckArray(greenCards, greenArray);
         lengthСheckArray(brownCards, brownArray);
         lengthСheckArray(blueCards, bluArray);
+
+        // console.log('greenArray',greenArray);
+        // console.log('brownArray',brownArray);
+        // console.log('bluArray',bluArray);
+
     
 }
-sortArray(0,1)
-
-            console.log('greenArray', greenArray)
-            console.log('bluArray', bluArray)
-            console.log('brownArray', brownArray)
 
 
 function addArrayWithDifficult(data,array,difficult) {
@@ -219,35 +267,11 @@ function lengthСheckArray(cards, array) {
 }
 }
 
-
 function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
    }
 
-//   setTimeout(() => {
-//     console.log(shuffle(greenArray))
-//   }, 5000);
-
 // END MAIN SORT
 
-// const ancientsData = [
-//     {
-//       id: 'azathoth',
-//       name: 'azathoth',
-//       // cardFace: Ancients.azathoth,
-//       firstStage: {
-//         greenCards: 1,
-//         blueCards: 1,
-//         brownCards: 2,
-//       },
-//       secondStage: {
-//         greenCards: 2,
-//         blueCards: 1,
-//         brownCards: 3,
-//       },
-//       thirdStage: {
-//         greenCards: 2,
-//         blueCards: 0,
-//         brownCards: 4,
-//       },
-//     },
+
+
