@@ -22,7 +22,7 @@ body {
   background-image: url(./assets/Rain/water.png);
   -webkit-animation: water 0.3s linear infinite;
           animation: water 0.3s linear infinite;
-  padding: 15px;
+  padding: 30px;
 }
 
 @-webkit-keyframes water {
@@ -44,26 +44,17 @@ body {
 }
 .ancient-cards {
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 35vw;
 }
 .ancient-cards img {
+  position: relative;
   padding: 10px;
-  opacity: 0.7;
   border-radius: 30px;
   cursor: pointer;
   transition-duration: 1s;
-  border: 20px solid transparent;
-  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
-     border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
-}
-.ancient-cards img:hover {
-  opacity: 1;
-  transition-duration: 1s;
-  border: 10px solid transparent;
-  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/2/0 stretch;
-     border-image: url(/assets/Gif/fire-65.gif) 47%/2/0 stretch;
 }
 
 .difficulty {
@@ -73,7 +64,7 @@ body {
   background-image: url(./assets/mythicCardBackground.png);
   background-position: center;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.3;
   transition-duration: 1s;
   cursor: pointer;
   border: 5px solid transparent;
@@ -91,15 +82,19 @@ body {
 .difficulty:not(:last-child) {
   margin-bottom: 15px;
 }
-.difficulty_level {
+.difficulty-level {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 50px;
+  transform: scale(0);
+  transition-duration: 2s;
 }
 
 .deck-of-cards {
+  transform: scale(0);
+  transition-duration: 2s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,15 +120,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 .stages__quantity input {
+  position: relative;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  padding: 20px;
+  text-align: center;
   font-size: 20px;
   color: white;
   pointer-events: none;
+  z-index: 2;
 }
 .stages__quantity input:not(:last-child) {
   margin-right: 10px;
@@ -177,4 +175,18 @@ body {
   border: 1px solid red;
   border-radius: 30px;
   opacity: 0.8;
+}
+
+.fire-border {
+  transition-duration: 0.1s;
+  border: 10px solid transparent;
+  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
+     border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.show {
+  transform: scale(1);
+  transition-duration: 2s;
 }/*# sourceMappingURL=style.css.map */
