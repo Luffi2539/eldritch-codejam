@@ -12,6 +12,7 @@ body {
     background-position: 50%;
     display: flex;
     margin: 0px;
+    gap: 35px;
     min-height: 100vh;
     background-size: cover;
     
@@ -36,6 +37,13 @@ body {
     box-sizing: border-box;
     background-size: contain;
     border-radius: 10px;
+    transition: 0.2s linear;
+}
+
+.first-card:hover {
+    cursor: pointer;
+    transform: translate(10px, 10px);
+    transition: 0.2s linear;
 }
 
 .second-card {
@@ -46,6 +54,13 @@ body {
     box-sizing: border-box;
     background-size: contain;
     border-radius: 10px;
+    transition: 0.2s linear;
+}
+
+.second-card:hover {
+    cursor: pointer;
+    transform: translate(10px, 10px);
+    transition: 0.2s linear;
 }
 
 .third-card {
@@ -56,6 +71,12 @@ body {
     box-sizing: border-box;
     background-size: contain;
     border-radius: 10px;
+    transition: 0.2s linear;
+}
+.third-card:hover {
+    cursor: pointer;
+    transform: translate(10px, 10px);
+    transition: 0.2s linear;
 }
 
 .fourth-card {
@@ -66,19 +87,22 @@ body {
     width: 200px;
     background-size: contain;
     border-radius: 10px;
+    transition: 0.2s linear;
+}
+.fourth-card:hover {
+    cursor: pointer;
+    transform: translate(10px, 10px);
+    transition: 0.2s linear;
 }
 
 /*****  Difficulty level ********/
 
 
-p {
+.difficult-text {
     margin: 5px;
-    
-    
+    transition: all 0.5s ease 0s;
 }
-
-p:hover {
-    border-bottom: 3px solid white;
+.difficult-text:hover {
     cursor: pointer;
 }
 
@@ -89,25 +113,113 @@ p:hover {
     max-width: 20%;
     align-items: center;
     gap: 10px;
-    
 }
 
-.very-easy {
-
+.very-easy:hover {
+    color: rgba(0, 128, 0, 0.5);
 }
 
-.easy {
-    
+.easy:hover {
+    color: green;
 }
 
-.normal {
-
+.normal:hover {
+    color: yellow;
 }
 
-.high {
-
+.high:hover {
+    color:rgba(230, 55, 55, 0.8);
 }
 
-.very-high {
+.very-high:hover {
+    color: red;
+}
 
+/******* Info cards ******/
+
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    max-width: 40%;
+}
+.stages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0 10px 0;
+    align-items: center;
+}
+.circles {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.first-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.second-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.third-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.stage-text {
+    margin: 0px;
+    font-size: smaller;
+}
+
+.circle-green {
+    display: flex;
+    background-color: green;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.circle-brown {
+    display: flex;
+    background-color: brown;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.circle-blue {
+    display: flex;
+    background-color: blue;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+
+.deck-card {
+    background-image: url(./assets/mythicCardBackground.png);
+    height: 190px;
+    width: 130px;
+    background-size: cover;
+    display: block;
+}
+
+.current-card {
+    background-image: url(./assets/MythicCards/blue/blue1.png);
+    height: 190px;
+    width: 130px;
+    background-size: cover;
+    display: block;
+    border-radius: 10%;
+    margin-top: 10px;
 }
