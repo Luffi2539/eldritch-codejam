@@ -24,7 +24,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 40%;
-    gap: 15px;
+    gap: 20px;
     padding: 20px;
     
 }
@@ -44,6 +44,7 @@ body {
     cursor: pointer;
     transform: translate(10px, 10px);
     transition: 0.2s linear;
+    box-shadow: 0 0 20px rgb(255, 147, 147);
 }
 
 .second-card {
@@ -61,6 +62,7 @@ body {
     cursor: pointer;
     transform: translate(10px, 10px);
     transition: 0.2s linear;
+    box-shadow: 0 0 20px rgb(255, 147, 147);
 }
 
 .third-card {
@@ -77,6 +79,7 @@ body {
     cursor: pointer;
     transform: translate(10px, 10px);
     transition: 0.2s linear;
+    box-shadow: 0 0 20px rgb(255, 147, 147);
 }
 
 .fourth-card {
@@ -93,6 +96,7 @@ body {
     cursor: pointer;
     transform: translate(10px, 10px);
     transition: 0.2s linear;
+    box-shadow: 0 0 20px rgb(255, 147, 147);
 }
 
 /*****  Difficulty level ********/
@@ -107,12 +111,14 @@ body {
 }
 
 .difficulty-level {
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 20%;
     align-items: center;
     gap: 10px;
+    
 }
 
 .very-easy:hover {
@@ -127,6 +133,7 @@ body {
     color: yellow;
 }
 
+
 .high:hover {
     color:rgba(230, 55, 55, 0.8);
 }
@@ -135,6 +142,26 @@ body {
     color: red;
 }
 
+/******* Mix Up ******/
+
+.mix-up {
+    visibility: hidden;
+    display: flex;
+    top: 280px;
+    position: relative;
+}
+.mix-up-text {
+    transition: 0.2s linear;
+}
+.mix-up-text:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.2s linear;
+    color: violet;
+}
+    
+
+
 /******* Info cards ******/
 
 .info-cards {
@@ -142,9 +169,10 @@ body {
     flex-direction: column;
     margin-left: 200px;
     max-width: 40%;
+    
 }
 .stages {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 10px;
     padding: 20px 0 10px 0;
@@ -211,10 +239,16 @@ body {
     height: 190px;
     width: 130px;
     background-size: cover;
-    display: block;
+    display: none;
+}
+
+.deck-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(146, 24, 170)
 }
 
 .current-card {
+    visibility: hidden;
     background-image: url(./assets/MythicCards/blue/blue1.png);
     height: 190px;
     width: 130px;
@@ -223,3 +257,37 @@ body {
     border-radius: 10%;
     margin-top: 10px;
 }
+
+/***** JS class ******/
+.active-card {
+    box-shadow: 0px 0px 20px rgb(16, 141, 5);
+}
+
+.visibility {
+    visibility: visible;
+}
+
+.visibility-mix-up {
+    position: relative;
+    top: 280px;
+    
+    visibility: visible;
+}
+.visibility-hidden {
+    display: none;
+}
+
+.active-info {
+    display: flex;
+}
+.active-normal {
+    color: yellow;
+    border-bottom: 3px solid;
+    
+}
+
+
+
+
+
+
