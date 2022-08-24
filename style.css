@@ -1,7 +1,8 @@
 body {
   position: relative;
   margin: 0;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .background {
@@ -20,9 +21,9 @@ body {
   width: 100%;
   height: 100vh;
   background-image: url(./assets/Rain/water.png);
-  -webkit-animation: water 0.3s linear infinite;
-          animation: water 0.3s linear infinite;
-  padding: 15px;
+  -webkit-animation: water 0.4s linear infinite;
+          animation: water 0.4s linear infinite;
+  padding: 30px;
 }
 
 @-webkit-keyframes water {
@@ -44,26 +45,17 @@ body {
 }
 .ancient-cards {
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 35vw;
 }
 .ancient-cards img {
+  position: relative;
   padding: 10px;
-  opacity: 0.7;
   border-radius: 30px;
   cursor: pointer;
-  transition-duration: 1s;
-  border: 20px solid transparent;
-  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
-     border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
-}
-.ancient-cards img:hover {
-  opacity: 1;
-  transition-duration: 1s;
-  border: 10px solid transparent;
-  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/2/0 stretch;
-     border-image: url(/assets/Gif/fire-65.gif) 47%/2/0 stretch;
+  transition-duration: 0.2s;
 }
 
 .difficulty {
@@ -73,7 +65,7 @@ body {
   background-image: url(./assets/mythicCardBackground.png);
   background-position: center;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.3;
   transition-duration: 1s;
   cursor: pointer;
   border: 5px solid transparent;
@@ -91,15 +83,23 @@ body {
 .difficulty:not(:last-child) {
   margin-bottom: 15px;
 }
-.difficulty_level {
+.difficulty-level {
+  max-width: 30vw;
+  background-image: url(./assets/Scroll/scroll.png);
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding: 100px;
+  transform: scale(0);
+  transition-duration: 2s;
 }
 
 .deck-of-cards {
+  transform: scale(0);
+  transition-duration: 2s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,15 +125,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 .stages__quantity input {
+  position: relative;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  padding: 20px;
+  text-align: center;
   font-size: 20px;
   color: white;
   pointer-events: none;
+  z-index: 2;
 }
 .stages__quantity input:not(:last-child) {
   margin-right: 10px;
@@ -152,17 +155,20 @@ body {
 }
 
 .working {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .inverted-deck {
+  position: relative;
+  z-index: 2;
   margin-right: 50px;
 }
 .inverted-deck .deck {
   border-radius: 30px;
-  opacity: 0.8;
+  opacity: 0.4;
   transition-duration: 1s;
   cursor: pointer;
 }
@@ -172,9 +178,40 @@ body {
 }
 
 .random-card {
+  position: relative;
+  z-index: 1;
   width: 200px;
   height: 280px;
-  border: 1px solid red;
   border-radius: 30px;
   opacity: 0.8;
+  transition-duration: 0.5s;
+  transform: translateX(-250px);
+}
+
+.fire-border {
+  border: 10px solid transparent;
+  -o-border-image: url(./assets/Gif/fire-65.gif) 47%/1/0 stretch;
+     border-image: url(./assets/Gif/fire-65.gif) 47%/1/0 stretch;
+  transform: scale(1.1);
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.show {
+  transform: scale(1);
+  transition-duration: 2s;
+}
+
+.hide {
+  transform: scale(0);
+  transition-duration: 1s;
+}
+
+.random-card.show {
+  transform: translateX(0px) rotateY(360deg);
+  transition-duration: 1s;
+}
+
+.none-click {
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */

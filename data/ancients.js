@@ -1,5 +1,3 @@
-import Ancients from '../assets/Ancients/index'
-
 const ancientsData = [
   {
     id: 'azathoth',
@@ -81,6 +79,4 @@ const ancientsData = [
       brownCards: 4,
     },
   },
-]
-
-export default ancientsData
+];
