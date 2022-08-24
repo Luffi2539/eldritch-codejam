@@ -10,9 +10,11 @@ import cardsDataGreen from './data/mythicCards/green/index.js';*/
 
 
 
-
-
 const azathoth = document.querySelector('.first-card');
+const IogSothoth = document.querySelector('.second-card');
+const cthulthu = document.querySelector('.third-card');
+const shubNiggurath = document.querySelector('.fourth-card');
+
 const difficultyLevel = document.querySelector('.difficulty-level');
 const normalLevel = document.querySelector('.normal');
 const infoCards = document.querySelector('.info-cards');
@@ -21,10 +23,36 @@ const mixUp = document.querySelector('.mix-up');
 const stages = document.querySelector('.stages');
 const deckCard = document.querySelector('.deck-card');
 
+
+const firstStage= document.querySelector('.first-stage');
+const secondStage = document.querySelector('.second-stage');
+const thirdStage = document.querySelector('.third-stage');
+
+
+/********** Activate card **********/
+
 azathoth.addEventListener('click', () => {
     difficultyLevel.classList.toggle('visibility');
     azathoth.classList.toggle('active-card');
 });
+
+IogSothoth.addEventListener('click', () => {
+    difficultyLevel.classList.toggle('visibility');
+    IogSothoth.classList.toggle('active-card');
+});
+
+cthulthu.addEventListener('click', () => {
+    difficultyLevel.classList.toggle('visibility');
+    cthulthu.classList.toggle('active-card');
+});
+
+shubNiggurath.addEventListener('click', () => {
+    difficultyLevel.classList.toggle('visibility');
+    shubNiggurath.classList.toggle('active-card');
+});
+
+
+/********** Activate difficulty **********/
 
 normalLevel.addEventListener('click', () => {
     if (normalLevel.classList == 'normal') {
@@ -48,20 +76,88 @@ mixUp.addEventListener('click', () => {
     deckCard.classList.toggle('active-info');
 });
 
+
 /*deckCard.addEventListener('click', () => {
     currentCard.style.backgroundImage = "url('./assets/MythicCards/blue/blue1.png')";
 });*/
 
-let azathothNormalFirstStage = [];
+
+
+/********** Active stage dots **********/
 
 mixUp.addEventListener('click', () => {
-    if ( azathoth == 'first-card', 'active-card' && normalLevel.classList == 'normal', 'active-normal') {
-        azathothNormalFirstStage.push(ancientsData[0].firstStage);
-    }
     
+    if (azathoth == 'first-card', 'active-card' && normalLevel.classList == 'normal', 'active-normal') {
+        firstStage.children[1].children[0].textContent = (ancientsData[0].firstStage.greenCards);
+        firstStage.children[1].children[1].textContent = (ancientsData[0].firstStage.brownCards);
+        firstStage.children[1].children[2].textContent = (ancientsData[0].firstStage.blueCards);
+
+        secondStage.children[1].children[0].textContent = (ancientsData[0].secondStage.greenCards);
+        secondStage.children[1].children[1].textContent = (ancientsData[0].secondStage.brownCards);
+        secondStage.children[1].children[2].textContent = (ancientsData[0].secondStage.blueCards);
+
+        thirdStage.children[1].children[0].textContent = (ancientsData[0].thirdStage.greenCards);
+        thirdStage.children[1].children[1].textContent = (ancientsData[0].thirdStage.brownCards);
+        thirdStage.children[1].children[2].textContent = (ancientsData[0].thirdStage.blueCards);
+    } else 
+
+    if (cthulthu == 'third-card', 'active-card' && normalLevel.classList == 'normal', 'active-normal') {
+        firstStage.children[1].children[0].textContent = (ancientsData[1].firstStage.greenCards);
+        firstStage.children[1].children[1].textContent = (ancientsData[1].firstStage.brownCards);
+        firstStage.children[1].children[2].textContent = (ancientsData[1].firstStage.blueCards);
+
+        secondStage.children[1].children[0].textContent = (ancientsData[1].secondStage.greenCards);
+        secondStage.children[1].children[1].textContent = (ancientsData[1].secondStage.brownCards);
+        secondStage.children[1].children[2].textContent = (ancientsData[1].secondStage.blueCards);
+
+        thirdStage.children[1].children[0].textContent = (ancientsData[1].thirdStage.greenCards);
+        thirdStage.children[1].children[1].textContent = (ancientsData[1].thirdStage.brownCards);
+        thirdStage.children[1].children[2].textContent = (ancientsData[1].thirdStage.blueCards);
+    } else
+
+    if (IogSothoth == 'second-card', 'active-card' && normalLevel.classList == 'normal', 'active-normal') {
+        firstStage.children[1].children[0].textContent = (ancientsData[2].firstStage.greenCards);
+        firstStage.children[1].children[1].textContent = (ancientsData[2].firstStage.brownCards);
+        firstStage.children[1].children[2].textContent = (ancientsData[2].firstStage.blueCards);
+
+        secondStage.children[1].children[0].textContent = (ancientsData[2].secondStage.greenCards);
+        secondStage.children[1].children[1].textContent = (ancientsData[2].secondStage.brownCards);
+        secondStage.children[1].children[2].textContent = (ancientsData[2].secondStage.blueCards);
+
+        thirdStage.children[1].children[0].textContent = (ancientsData[2].thirdStage.greenCards);
+        thirdStage.children[1].children[1].textContent = (ancientsData[2].thirdStage.brownCards);
+        thirdStage.children[1].children[2].textContent = (ancientsData[3].thirdStage.blueCards);
+    } else
+
+    if (shubNiggurath == 'fourth-card', 'active-card' && normalLevel.classList == 'normal', 'active-normal') {
+        firstStage.children[1].children[0].textContent = (ancientsData[3].firstStage.greenCards);
+        firstStage.children[1].children[1].textContent = (ancientsData[3].firstStage.brownCards);
+        firstStage.children[1].children[2].textContent = (ancientsData[3].firstStage.blueCards);
+
+        secondStage.children[1].children[0].textContent = (ancientsData[3].secondStage.greenCards);
+        secondStage.children[1].children[1].textContent = (ancientsData[3].secondStage.brownCards);
+        secondStage.children[1].children[2].textContent = (ancientsData[3].secondStage.blueCards);
+
+        thirdStage.children[1].children[0].textContent = (ancientsData[3].thirdStage.greenCards);
+        thirdStage.children[1].children[1].textContent = (ancientsData[3].thirdStage.brownCards);
+        thirdStage.children[1].children[2].textContent = (ancientsData[3].thirdStage.blueCards);
+    } else if (normalLevel.classList !== 'normal', 'active-normal') {
+        firstStage.children[1].children[0].textContent = ' ';
+        firstStage.children[1].children[1].textContent = ' ';
+        firstStage.children[1].children[2].textContent = ' ';
+
+        secondStage.children[1].children[0].textContent = ' ';
+        secondStage.children[1].children[1].textContent = ' ';
+        secondStage.children[1].children[2].textContent = ' ';
+
+        thirdStage.children[1].children[0].textContent = ' ';
+        thirdStage.children[1].children[1].textContent = ' ';
+        thirdStage.children[1].children[2].textContent = ' ';
+    }
+
 });
 
-
+console.log(ancientsData[3]);
 
 
 
