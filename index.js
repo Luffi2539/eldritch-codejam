@@ -31,24 +31,49 @@ const thirdStage = document.querySelector('.third-stage');
 
 /********** Activate card **********/
 
+function activateNormal ()  {
+    
+    if (difficultyLevel.classList == 'difficulty-level') {
+        difficultyLevel.classList.toggle('visibility');
+        
+    } else 
+            if (difficultyLevel.classList == 'difficulty-level', 'visibility') {
+            difficultyLevel.classList.remove('visibility');
+            
+    }
+}
+console.log(difficultyLevel.classList == 'difficulty-level', 'visibility');
+
 azathoth.addEventListener('click', () => {
-    difficultyLevel.classList.toggle('visibility');
+    activateNormal ();
     azathoth.classList.toggle('active-card');
+    IogSothoth.classList.remove('active-card');
+    cthulthu.classList.remove('active-card');
+    shubNiggurath.classList.remove('active-card');
 });
 
 IogSothoth.addEventListener('click', () => {
-    difficultyLevel.classList.toggle('visibility');
+    activateNormal ();
     IogSothoth.classList.toggle('active-card');
+    azathoth.classList.remove('active-card');
+    cthulthu.classList.remove('active-card');
+    shubNiggurath.classList.remove('active-card');
 });
 
 cthulthu.addEventListener('click', () => {
-    difficultyLevel.classList.toggle('visibility');
+    activateNormal ();
     cthulthu.classList.toggle('active-card');
+    azathoth.classList.remove('active-card');
+    IogSothoth.classList.remove('active-card');
+    shubNiggurath.classList.remove('active-card');
 });
 
 shubNiggurath.addEventListener('click', () => {
-    difficultyLevel.classList.toggle('visibility');
+    activateNormal ();
     shubNiggurath.classList.toggle('active-card');
+    azathoth.classList.remove('active-card');
+    IogSothoth.classList.remove('active-card');
+    cthulthu.classList.remove('active-card');
 });
 
 
@@ -141,23 +166,22 @@ mixUp.addEventListener('click', () => {
         thirdStage.children[1].children[0].textContent = (ancientsData[3].thirdStage.greenCards);
         thirdStage.children[1].children[1].textContent = (ancientsData[3].thirdStage.brownCards);
         thirdStage.children[1].children[2].textContent = (ancientsData[3].thirdStage.blueCards);
-    } else if (normalLevel.classList !== 'normal', 'active-normal') {
-        firstStage.children[1].children[0].textContent = ' ';
-        firstStage.children[1].children[1].textContent = ' ';
-        firstStage.children[1].children[2].textContent = ' ';
+    } else {
+        firstStage.children[1].children[0].textContent = '';
+        firstStage.children[1].children[1].textContent = '';
+        firstStage.children[1].children[2].textContent = '';
 
-        secondStage.children[1].children[0].textContent = ' ';
-        secondStage.children[1].children[1].textContent = ' ';
-        secondStage.children[1].children[2].textContent = ' ';
+        secondStage.children[1].children[0].textContent = '';
+        secondStage.children[1].children[1].textContent = '';
+        secondStage.children[1].children[2].textContent = '';
 
-        thirdStage.children[1].children[0].textContent = ' ';
-        thirdStage.children[1].children[1].textContent = ' ';
-        thirdStage.children[1].children[2].textContent = ' ';
+        thirdStage.children[1].children[0].textContent = '';
+        thirdStage.children[1].children[1].textContent = '';
+        thirdStage.children[1].children[2].textContent = '';
     }
-
 });
 
-console.log(ancientsData[3]);
+
 
 
 
