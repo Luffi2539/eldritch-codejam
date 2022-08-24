@@ -4,6 +4,7 @@ import cardsDataBlue from './data/mythicCards/blue/indexBlue.js';
 
 // ---------------------------------------
 const knife = new Audio('./assets/Audio/6802dff441a6d4e (mp3cut.net).mp3');
+const rain = document.querySelector('audio');
 const music = new Audio('./assets/Audio/film-ujasov-kino.mp3');
 const difficulty = document.querySelectorAll(".difficulty");
 const takeCard = document.querySelector(".deck");
@@ -32,7 +33,7 @@ playAudio(card3, new Audio('./assets/Audio/monster3.mp3'), .1);
 playAudio(card4, new Audio('./assets/Audio/monster4.mp3'), .1);
 playAudio(takeCard, new Audio('./assets/Audio/mb_card_deal_08.mp3'), .1);
 
-document.querySelector('.rain').volume = .1;
+rain.volume = .5;
 
 // ---------------------------------------
 const cards = document.querySelectorAll('.ancient-cards img')
@@ -2578,6 +2579,9 @@ takeCard.addEventListener('click', () => {
         takeCard.classList.add('hide');
         difficultyBlock.classList.add('hide');
         card1.classList.remove('fire-border');
+        card2.classList.remove('fire-border');
+        card3.classList.remove('fire-border');
+        card4.classList.remove('fire-border');
         difficulty.forEach(item => item.classList.remove('fire-border'));
         music.play();
     }
