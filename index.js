@@ -32,7 +32,7 @@ playAudio(card3, new Audio('./assets/Audio/monster3.mp3'), .1);
 playAudio(card4, new Audio('./assets/Audio/monster4.mp3'), .1);
 playAudio(takeCard, new Audio('./assets/Audio/mb_card_deal_08.mp3'), .1);
 
-document.querySelector('.rain').volume = .0;
+document.querySelector('.rain').volume = .1;
 
 // ---------------------------------------
 const cards = document.querySelectorAll('.ancient-cards img')

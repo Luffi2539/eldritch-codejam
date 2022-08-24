@@ -194,6 +194,7 @@ body {
      border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
   transform: scale(1.1);
   opacity: 1;
+  transition-duration: 1s;
 }
 
 .show {
@@ -209,4 +210,8 @@ body {
 .random-card.show {
   transform: translateX(0px) rotateY(360deg);
   transition-duration: 1s;
+}
+
+.none-click {
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
