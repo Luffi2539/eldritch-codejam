@@ -1,4 +1,4 @@
-import Ancients from '../assets/Ancients/index'
+import Ancients from '../assets/Ancients/index.js';
 
 const ancientsData = [
   {
@@ -81,6 +81,6 @@ const ancientsData = [
       brownCards: 4,
     },
   },
-]
+];
 
-export default ancientsData
+export default ancientsData;

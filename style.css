@@ -248,19 +248,18 @@ body {
 }
 
 .current-card {
-    visibility: hidden;
-    background-image: url(./assets/MythicCards/blue/blue1.png);
     height: 190px;
     width: 130px;
     background-size: cover;
-    display: block;
     border-radius: 10%;
     margin-top: 10px;
 }
 
+
+
 /***** JS class ******/
 .active-card {
-    box-shadow: 0px 0px 20px rgb(16, 141, 5);
+    box-shadow: inset 0px 0px 40px rgb(16, 141, 5);
 }
 
 .visibility {

@@ -1,3 +1,15 @@
+import blueCardsAssets from '../assets/MythicCards/blue/index.js';
+import brownCardsAssets from '../assets/MythicCards/brown/index.js';
+import greenCardsAssets from '../assets/MythicCards/green/index.js';
+import ancients from '../assets/Ancients/index.js';
+import ancientsData from './data/ancients.js';
+import difficulties from '../data/difficulties.js';
+/*import cardsDataBlue from '../data/mythicCards/blue/index.js';
+import cardsDataBrown from './data/mythicCards/brown/index.js';
+import cardsDataGreen from './data/mythicCards/green/index.js';*/
+
+
+
 
 
 const azathoth = document.querySelector('.first-card');
@@ -34,11 +46,24 @@ mixUp.addEventListener('click', () => {
     mixUp.classList.toggle('visibility-hidden');
     stages.classList.toggle('active-info');
     deckCard.classList.toggle('active-info');
-
 });
 
-deckCard.addEventListener('click', () => {
-    currentCard.classList.toggle('visibility');
+/*deckCard.addEventListener('click', () => {
+    currentCard.style.backgroundImage = "url('./assets/MythicCards/blue/blue1.png')";
+});*/
+
+let azathothNormalFirstStage = [];
+
+mixUp.addEventListener('click', () => {
+    if ( azathoth == 'first-card', 'active-card' && normalLevel.classList == 'normal', 'active-normal') {
+        azathothNormalFirstStage.push(ancientsData[0].firstStage);
+    }
+    
 });
+
+
+
+
+
 
 
