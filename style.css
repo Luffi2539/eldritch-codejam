@@ -23,7 +23,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 40%;
+    max-width: 33%;
     gap: 20px;
     padding: 20px;
     
@@ -147,7 +147,7 @@ body {
 .mix-up {
     visibility: hidden;
     display: flex;
-    top: 280px;
+    top: 50vh;
     position: relative;
 }
 .mix-up-text {
