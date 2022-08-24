@@ -1,18 +1,15 @@
 // import difficulties from './dacardsDataGreenta/difficulties.js';
 
 import cardsDataBlue from './data/mythicCards/blue/index.js';
-// console.log('cardsDataBlue', cardsDataBlue)
 import cardsDataBrown from './data/mythicCards/brown/index.js';
-// console.log('cardsDataBrown', cardsDataBrown)
 import cardsDataGreen from './data/mythicCards/green/index.js';
-// console.log('cardsDataGreen', cardsDataGreen)
 
 import ancientsData from './data/ancients.js';
-// console.log('ancientsData', ancientsData)
 
 let greenArray = [];
 let brownArray = [];
 let bluArray = [];
+let stage = 0;
 let matrix = [
     [],
     [],
@@ -20,6 +17,9 @@ let matrix = [
 ];
 
 const gameTableStack = document.querySelectorAll('.game__table__stack');
+const gameCardBackground = document.querySelector('.game__card-background');
+const gameCardItem = document.querySelector('.game__card-item')
+
 let ancientItem = 0;
 let difficult = 1;
 
@@ -51,18 +51,12 @@ function createMatrix (ancient) {
 
 // Конец матрицы
 
-console.log('greenArray',greenArray);
-console.log('brownArray',brownArray);
-console.log('bluArray',bluArray);
-console.log('matrix',matrix);
-
-
-// document.querySelector('.game__card-item').style.backgroundImage = 'url(../assets/MythicCards/blue/blue5.png)'
-
 // START Сhoice Ancients
 
 document.querySelector('.ancients').addEventListener('click', (e)=> {
+    stage = 0;
     removeAncientsItemActive();
+    gameCardItem.style.backgroundImage = '';
     
     if (e.target.classList.contains('ancients__item')) {
 
@@ -89,9 +83,11 @@ document.querySelector('.ancients').addEventListener('click', (e)=> {
         addgameTableStack(matrix);
         sortArray (ancientItem, difficult);
 
-        console.log('greenArray',greenArray);
-        console.log('brownArray',brownArray);
-        console.log('bluArray',bluArray);
+console.log('greenArray',greenArray);
+console.log('brownArray',brownArray);
+console.log('bluArray',bluArray);
+console.log('matrix',matrix);
+
 
 });
 
@@ -108,7 +104,9 @@ function removeAncientsItemActive () {
 
 
 document.querySelector('.difficulty-selection').addEventListener('click', (e)=> {
+    stage = 0;
     removeDifficultyItemActive();
+    gameCardItem.style.backgroundImage = ''
     
     if (e.target.classList.contains('difficulty-selection__item')) {
 
@@ -134,14 +132,17 @@ document.querySelector('.difficulty-selection').addEventListener('click', (e)=> 
                 document.querySelector('.difficulty-selection__item_5').classList.add('difficulty-selection__item_active');
             }
         }
-        console.log(difficult);
 
-        sortArray (ancientItem, difficult)
         createMatrix(ancientItem);
+        addgameTableStack(matrix);
+        sortArray (ancientItem, difficult);
 
-        console.log('greenArray',greenArray);
-        console.log('brownArray',brownArray);
-        console.log('bluArray',bluArray);
+
+
+console.log('greenArray',greenArray);
+console.log('brownArray',brownArray);
+console.log('bluArray',bluArray);
+console.log('matrix',matrix);
 
 });
 
@@ -152,12 +153,9 @@ function removeDifficultyItemActive () {
     })
 }
 
-
 // END Сhoice difficult
 
-
 // START MAIN SORT
-
 
 
 function sortArray (ancient, difficult) {
@@ -214,13 +212,9 @@ function sortArray (ancient, difficult) {
             brownArray = [...brownArrayEasy,...brownArrayNormal,...brownArrayHard];
             bluArray = [...bluArrayEasy,...bluArrayNormal,...bluArrayHard];
 
-        console.log('bluArray',bluArray);
-
-
             shuffle(greenArray);
             shuffle(brownArray);
             shuffle(bluArray);
-            console.log('bluArray',bluArray);
 
         }
         if (difficult === 4) {
@@ -242,10 +236,6 @@ function sortArray (ancient, difficult) {
         lengthСheckArray(brownCards, brownArray);
         lengthСheckArray(blueCards, bluArray);
 
-        // console.log('greenArray',greenArray);
-        // console.log('brownArray',brownArray);
-        // console.log('bluArray',bluArray);
-
     
 }
 
@@ -256,6 +246,7 @@ function addArrayWithDifficult(data,array,difficult) {
             array.push(element.cardFace)
         }
     });
+    shuffle(array);
 }
 
 function lengthСheckArray(cards, array) {
@@ -272,6 +263,67 @@ function shuffle(array) {
    }
 
 // END MAIN SORT
+
+// START REMOVE MATRIX
+    
+    function getRandomNum() {
+        return Math.floor(Math.random() * (3 - 0));
+     };
+
+     function proofOfSummStageMatrix(array) {
+        return array.reduce((acc, num) => acc + num, 0);
+     };
+
+gameCardBackground.addEventListener('click', () => {
+    
+    let summStageMatrix = proofOfSummStageMatrix(matrix[stage]);
+    if (stage === 2 && summStageMatrix === 0) {
+        gameCardItem.style.backgroundImage = ''
+    } else {
+
+    let random = getRandomNum();
+
+    if (summStageMatrix === 0) {
+        stage += 1;
+    }
+    console.log('stage',stage)
+        showbackgroundImage(random);
+        addgameTableStack(matrix);
+    }
+
+})
+
+function showbackgroundImage (random) {
+    // if(matrix[stage][random] === undefined) {
+    //     return
+    // } else
+    if (random === 0 && matrix[stage][random] !== 0) {
+        gameCardItem.style.backgroundImage = `${greenArray.pop()}`;
+        matrix[stage][random] -= 1; 
+    } else
+    if (random === 1 && matrix[stage][random] !== 0) {
+        gameCardItem.style.backgroundImage = `${bluArray.pop()}`;
+        matrix[stage][random] -= 1;
+    } else
+    if (random === 2 && matrix[stage][random] !== 0) {
+        gameCardItem.style.backgroundImage = `${brownArray.pop()}`;
+        matrix[stage][random] -= 1;
+    } else {
+        showbackgroundImage(getRandomNum());
+    }
+}
+
+
+// shuffle(greenArray);
+// shuffle(brownArray);
+// shuffle(bluArray);
+
+// console.log('greenArray',greenArray);
+// console.log('brownArray',brownArray);
+// console.log('bluArray',bluArray);
+// console.log('matrix',matrix);
+
+// END REMOVE MATRIX
 
 
 
