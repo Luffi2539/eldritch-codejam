@@ -268,7 +268,7 @@ body {
 
 .visibility-mix-up {
     position: relative;
-    top: 280px;
+    top: 50vh;
     
     visibility: visible;
 }
