@@ -1,7 +1,8 @@
 body {
   position: relative;
   margin: 0;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .background {
@@ -20,8 +21,8 @@ body {
   width: 100%;
   height: 100vh;
   background-image: url(./assets/Rain/water.png);
-  -webkit-animation: water 0.3s linear infinite;
-          animation: water 0.3s linear infinite;
+  -webkit-animation: water 0.4s linear infinite;
+          animation: water 0.4s linear infinite;
   padding: 30px;
 }
 
@@ -54,7 +55,7 @@ body {
   padding: 10px;
   border-radius: 30px;
   cursor: pointer;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .difficulty {
@@ -83,11 +84,15 @@ body {
   margin-bottom: 15px;
 }
 .difficulty-level {
+  max-width: 30vw;
+  background-image: url(./assets/Scroll/scroll.png);
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding: 100px;
   transform: scale(0);
   transition-duration: 2s;
 }
@@ -150,17 +155,20 @@ body {
 }
 
 .working {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .inverted-deck {
+  position: relative;
+  z-index: 2;
   margin-right: 50px;
 }
 .inverted-deck .deck {
   border-radius: 30px;
-  opacity: 0.8;
+  opacity: 0.4;
   transition-duration: 1s;
   cursor: pointer;
 }
@@ -170,15 +178,17 @@ body {
 }
 
 .random-card {
+  position: relative;
+  z-index: 1;
   width: 200px;
   height: 280px;
-  border: 1px solid red;
   border-radius: 30px;
   opacity: 0.8;
+  transition-duration: 0.5s;
+  transform: translateX(-250px);
 }
 
 .fire-border {
-  transition-duration: 0.1s;
   border: 10px solid transparent;
   -o-border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
      border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
@@ -189,4 +199,14 @@ body {
 .show {
   transform: scale(1);
   transition-duration: 2s;
+}
+
+.hide {
+  transform: scale(0);
+  transition-duration: 1s;
+}
+
+.random-card.show {
+  transform: translateX(0px) rotateY(360deg);
+  transition-duration: 1s;
 }/*# sourceMappingURL=style.css.map */

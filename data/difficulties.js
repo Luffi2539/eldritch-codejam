@@ -12,5 +12,3 @@ const difficulties = [
     name: 'Высокая'
   },
 ]
-
-export default difficulties

@@ -1,7 +1,8 @@
 body {
     position: relative;
     margin: 0;
-    height: 100vh;
+    height: 100%;
+    overflow: hidden;
 }
 
 .background {
@@ -20,7 +21,7 @@ body {
     width: 100%;
     height: 100vh;
     background-image: url(./assets/Rain/water.png);
-    animation: water .3s linear infinite;
+    animation: water .4s linear infinite;
     padding: 30px;
 }
 
@@ -46,7 +47,7 @@ body {
         padding: 10px;
         border-radius: 30px;
         cursor: pointer;
-        transition-duration: 1s;
+        transition-duration: .2s;
     }
 }
 
@@ -63,7 +64,7 @@ body {
     border: 5px solid transparent;
     border-radius: 10px;
     border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
-    
+
     &:hover {
         opacity: 1;
         transition-duration: 1s;
@@ -76,11 +77,15 @@ body {
     }
 
     &-level {
+        max-width: 30vw;
+        background-image: url(./assets/Scroll/scroll.png);
+        background-repeat: no-repeat;
+        background-position: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 50px;
+        padding: 100px;
         transform: scale(0);
         transition-duration: 2s;
     }
@@ -148,19 +153,31 @@ body {
 }
 
 .working {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+// .deck-of-playing-cards {
+//     position: absolute;
+//     border: 1px solid red;
+//     width: 200px;
+//     height: 280px;
+//     border-radius: 30px;
+// }
+
 .inverted-deck {
+    position: relative;
+    z-index: 2;
     margin-right: 50px;
 
     .deck {
         border-radius: 30px;
-        opacity: .8;
+        opacity: .4;
         transition-duration: 1s;
         cursor: pointer;
+
         &:hover {
             opacity: 1;
             transition-duration: 1s;
@@ -169,22 +186,39 @@ body {
 }
 
 .random-card {
+    position: relative;
+    z-index: 1;
     width: 200px;
     height: 280px;
-    border: 1px solid red;
     border-radius: 30px;
     opacity: .8;
+    transition-duration: .5s;
+    transform: translateX(-250px);
 }
 
 .fire-border {
-    transition-duration: .1s;
     border: 10px solid transparent;
     border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
     transform: scale(1.1);
     opacity: 1;
+    transition-duration: 1s;
 }
 
 .show {
     transform: scale(1);
     transition-duration: 2s;
+}
+
+.hide {
+    transform: scale(0);
+    transition-duration: 1s;
+}
+
+.random-card.show {
+    transform: translateX(0px) rotateY(360deg);
+    transition-duration: 1s;
+}
+
+.none-click {
+    pointer-events: none;
 }
