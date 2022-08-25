@@ -1,4 +1,4 @@
-import Ancients from '../assets/Ancients/index'
+const Ancients = '../assets/Ancients/index.js'
 
 const ancientsData = [
   {
