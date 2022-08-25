@@ -33,16 +33,16 @@ function randomGreenCards() {
     let normalFilter = greenCards.filter(dif => dif.difficulty === 'normal').sort(() => Math.round(Math.random() * 100) - 50);
     let hardFilter = greenCards.filter(dif => dif.difficulty === 'hard').sort(() => Math.round(Math.random() * 100) - 50);
     let difference;
-    let resultArray = greenCards.sort(() => Math.round(Math.random() * 100) - 50);;
+    let resultArray = greenCards.sort(() => Math.round(Math.random() * 100) - 50);
     if (isDifficulty === 'veryEasy') {
         difference = sum - easyFilter.length;
         resultArray = [...easyFilter, ...normalFilter.slice(0,difference)]
     }
     if (isDifficulty === 'easy') {
-        resultArray = [...easyFilter, ...normalFilter]
+        resultArray = [...easyFilter, ...normalFilter].sort(() => Math.round(Math.random() * 100) - 50)
     }
     if (isDifficulty === 'hard') {
-        resultArray = [...hardFilter, ...normalFilter]
+        resultArray = [...hardFilter, ...normalFilter].sort(() => Math.round(Math.random() * 100) - 50)
     }
     if (isDifficulty === 'veryHard') {
         difference = sum - hardFilter.length;
@@ -63,10 +63,10 @@ function randomBlueCards() {
         resultArray = [...easyFilter, ...normalFilter.slice(0,difference)]
     }
     if (isDifficulty === 'easy') {
-        resultArray = [...easyFilter, ...normalFilter]
+        resultArray = [...easyFilter, ...normalFilter].sort(() => Math.round(Math.random() * 100) - 50)
     }
     if (isDifficulty === 'hard') {
-        resultArray = [...hardFilter, ...normalFilter]
+        resultArray = [...hardFilter, ...normalFilter].sort(() => Math.round(Math.random() * 100) - 50)
     }
     if (isDifficulty === 'veryHard') {
         difference = sum - hardFilter.length;
@@ -87,10 +87,10 @@ function randomBrownCards() {
         resultArray = [...easyFilter, ...normalFilter.slice(0,difference)]
     }
     if (isDifficulty === 'easy') {
-        resultArray = [...easyFilter, ...normalFilter]
+        resultArray = [...easyFilter, ...normalFilter].sort(() => Math.round(Math.random() * 100) - 50)
     }
     if (isDifficulty === 'hard') {
-        resultArray = [...hardFilter, ...normalFilter]
+        resultArray = [...hardFilter, ...normalFilter].sort(() => Math.round(Math.random() * 100) - 50)
     }
     if (isDifficulty === 'veryHard') {
         difference = sum - hardFilter.length;
