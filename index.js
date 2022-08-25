@@ -8,8 +8,6 @@ import difficulties from '../data/difficulties.js';
 import cardsDataBrown from './data/mythicCards/brown/index.js';
 import cardsDataGreen from './data/mythicCards/green/index.js';*/
 
-console.log(Object.keys(blueCardsAssets)[1]);
-
 
 const azathoth = document.querySelector('.first-card');
 const IogSothoth = document.querySelector('.second-card');
@@ -24,23 +22,18 @@ const mixUp = document.querySelector('.mix-up');
 const stages = document.querySelector('.stages');
 const deckCard = document.querySelector('.deck-card');
 
-
 const firstStage= document.querySelector('.first-stage');
 const secondStage = document.querySelector('.second-stage');
 const thirdStage = document.querySelector('.third-stage');
 
-
 /********** Activate card **********/
 
 function activateNormal ()  {
-    
     if (difficultyLevel.classList == 'difficulty-level') {
         difficultyLevel.classList.toggle('visibility');
-        
     } else 
             if (difficultyLevel.classList == 'difficulty-level', 'visibility') {
             difficultyLevel.classList.remove('visibility');
-            
     }
 }
 
@@ -77,7 +70,6 @@ shubNiggurath.addEventListener('click', () => {
     cthulthu.classList.remove('active-card');
 });
 
-
 /********** Activate difficulty **********/
 
 normalLevel.addEventListener('click', () => {
@@ -102,14 +94,11 @@ mixUp.addEventListener('click', () => {
     deckCard.classList.toggle('active-info');
 });
 
-
 /*deckCard.addEventListener('click', () => {
     currentCard.style.backgroundImage = "url('./assets/MythicCards/blue/blue1.png')";
 });*/
 
-
-
-/********** Active stage dots **********/
+/********** Active stage dots  **********/
 
 mixUp.addEventListener('click', () => {
     
@@ -183,7 +172,7 @@ mixUp.addEventListener('click', () => {
 });
 
 
-/********** Mythic cards activate **********/
+/********** Mythic cards activate azathoth **********/
 
 deckCard.addEventListener('click', () => {
     currentCardBg ();
@@ -214,15 +203,42 @@ const brownCardsLength = Object.keys(brownCardsAssets).length;
 const blueCardsLength = Object.keys(blueCardsAssets).length;
 
 
+let allStageGreenAzathoth = ancientsData[0].firstStage.greenCards + ancientsData[0].secondStage.greenCards + ancientsData[0].thirdStage.greenCards;
+let allStageBrownAzathoth = ancientsData[0].firstStage.brownCards + ancientsData[0].secondStage.brownCards + ancientsData[0].thirdStage.brownCards;
+let allStageBlueAzathoth = ancientsData[0].firstStage.blueCards + ancientsData[0].secondStage.blueCards + ancientsData[0].thirdStage.blueCards;
 
-function createGreenAll () {
-    for (let i = 0; i < ancientsData[0].firstStage.greenCards; i++) {
-        firstStageGreen.push(Object.keys(greenCardsAssets)[1]);
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function allStageColor () {
+    for (let i = 0; i < allStageGreenAzathoth; i++) {
+        let randomNum = getRandomInt(1, 18);
+        cardsGreenAll.push(Object.keys(greenCardsAssets)[randomNum]);
     }
-};
+    for (let i = 0; i < allStageBrownAzathoth; i++) {
+        let randomNum = getRandomInt(1, 21);
+        cardsBrownAll.push(Object.keys(brownCardsAssets)[randomNum]);
+    }
+    for (let i = 0; i < allStageBlueAzathoth; i++) {
+        let randomNum = getRandomInt(1, 12);
+        cardsBlueAll.push(Object.keys(blueCardsAssets)[randomNum]);
+        console.log(randomNum);
+    }
+}
 
-createGreenAll ();
-console.log(firstStageGreen);
+
+console.log(allStageGreenAzathoth);
+allStageColor ();
+console.log(cardsGreenAll);
+console.log(cardsBrownAll);
+console.log(cardsBlueAll);
+
+
+
 
 
 
