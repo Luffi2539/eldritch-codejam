@@ -1,9 +1,9 @@
 import greenCards from './assets/MythicCards/green/index.js';
 import brownCards from './assets/MythicCards/brown/index.js';
 import blueCards from './assets/MythicCards/blue/index.js';
-import blueCardsData from './data/MythicCards/blue/index.js';
-import brownCardsData from './data/MythicCards/brown/index.js';
-import greenCardsData from './data/MythicCards/green/index.js';
+import blueCardsData from './data/mythicCards/blue/index.js';
+import brownCardsData from './data/mythicCards/brown/index.js';
+import greenCardsData from './data/mythicCards/green/index.js';
 import ancientsData from './data/ancients.js';
 import difficulties from './data/difficulties.js';
 
