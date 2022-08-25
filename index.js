@@ -8,6 +8,7 @@ import difficulties from '../data/difficulties.js';
 import cardsDataBrown from './data/mythicCards/brown/index.js';
 import cardsDataGreen from './data/mythicCards/green/index.js';*/
 
+console.log(Object.keys(blueCardsAssets)[1]);
 
 
 const azathoth = document.querySelector('.first-card');
@@ -42,7 +43,7 @@ function activateNormal ()  {
             
     }
 }
-console.log(difficultyLevel.classList == 'difficulty-level', 'visibility');
+
 
 azathoth.addEventListener('click', () => {
     activateNormal ();
@@ -182,6 +183,46 @@ mixUp.addEventListener('click', () => {
 });
 
 
+/********** Mythic cards activate **********/
+
+deckCard.addEventListener('click', () => {
+    currentCardBg ();
+});
+
+function currentCardBg () {
+   currentCard.style.backgroundImage = "url('./assets/MythicCards/{color}/{colorNumber}')";
+}
+
+let cardsGreenAll = [];
+let cardsBrownAll = [];
+let cardsBlueAll =[];
+
+let firstStageGreen = [];
+let firstStageBrown = [];
+let firstStageBlue = [];
+
+let secondStageGreen = [];
+let secondtageBrown = [];
+let secondtageBlue = [];
+
+let thirdStageGreen = [];
+let thirdtageBrown = [];
+let thirdtageBlue = [];
+
+const greenCardsLength = Object.keys(greenCardsAssets).length;
+const brownCardsLength = Object.keys(brownCardsAssets).length;
+const blueCardsLength = Object.keys(blueCardsAssets).length;
+
+
+
+function createGreenAll () {
+    for (let i = 0; i < ancientsData[0].firstStage.greenCards; i++) {
+        firstStageGreen.push(Object.keys(greenCardsAssets)[1]);
+    }
+};
+
+createGreenAll ();
+console.log(firstStageGreen);
 
 
 
