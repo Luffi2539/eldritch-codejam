@@ -9,6 +9,7 @@ import cardsDataBrown from './data/mythicCards/brown/index.js';
 import cardsDataGreen from './data/mythicCards/green/index.js';*/
 
 
+
 const azathoth = document.querySelector('.first-card');
 const IogSothoth = document.querySelector('.second-card');
 const cthulthu = document.querySelector('.third-card');
@@ -179,7 +180,7 @@ deckCard.addEventListener('click', () => {
 });
 
 function currentCardBg () {
-   currentCard.style.backgroundImage = "url('./assets/MythicCards/{color}/{colorNumber}')";
+   currentCard.style.backgroundImage = `url('./assets/MythicCards/${color}/${colorNum}.png')`;
 }
 
 let cardsGreenAll = [];
@@ -191,12 +192,12 @@ let firstStageBrown = [];
 let firstStageBlue = [];
 
 let secondStageGreen = [];
-let secondtageBrown = [];
-let secondtageBlue = [];
+let secondStageBrown = [];
+let secondStageBlue = [];
 
 let thirdStageGreen = [];
-let thirdtageBrown = [];
-let thirdtageBlue = [];
+let thirdStageBrown = [];
+let thirdStageBlue = [];
 
 const greenCardsLength = Object.keys(greenCardsAssets).length;
 const brownCardsLength = Object.keys(brownCardsAssets).length;
@@ -214,25 +215,86 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function allStageColor () {
+function allStageColorAzathoth () {
     for (let i = 0; i < allStageGreenAzathoth; i++) {
-        let randomNum = getRandomInt(1, 18);
+        let randomNum = getRandomInt(0, 18);
         cardsGreenAll.push(Object.keys(greenCardsAssets)[randomNum]);
     }
     for (let i = 0; i < allStageBrownAzathoth; i++) {
-        let randomNum = getRandomInt(1, 21);
+        let randomNum = getRandomInt(0, 21);
         cardsBrownAll.push(Object.keys(brownCardsAssets)[randomNum]);
     }
     for (let i = 0; i < allStageBlueAzathoth; i++) {
-        let randomNum = getRandomInt(1, 12);
+        let randomNum = getRandomInt(0, 12);
         cardsBlueAll.push(Object.keys(blueCardsAssets)[randomNum]);
-        console.log(randomNum);
     }
 }
+allStageColorAzathoth ();
+
+function firstStageAzathoth () {
+    for (let i = 0; i < ancientsData[0].firstStage.greenCards; i++) {
+        let randomNum = getRandomInt(0, 5);
+        firstStageGreen.push(cardsGreenAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].firstStage.brownCards; i++) {
+        let randomNum = getRandomInt(0, 9);
+        firstStageBrown.push(cardsBrownAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].firstStage.blueCards; i++) {
+        let randomNum = getRandomInt(0, 2);
+        firstStageBlue.push(cardsBlueAll[randomNum]);
+    }
+}
+firstStageAzathoth ();
+
+function secondStageAzathoth () {
+    for (let i = 0; i < ancientsData[0].secondStage.greenCards; i++) {
+        let randomNum = getRandomInt(0, 5);
+        secondStageGreen.push(cardsGreenAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].secondStage.brownCards; i++) {
+        let randomNum = getRandomInt(0, 9);
+        secondStageBrown.push(cardsBrownAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].secondStage.blueCards; i++) {
+        let randomNum = getRandomInt(0, 2);
+        secondStageBlue.push(cardsBlueAll[randomNum]);
+    }
+}
+secondStageAzathoth ();
+
+function thirdStageAzathoth () {
+    for (let i = 0; i < ancientsData[0].thirdStage.greenCards; i++) {
+        let randomNum = getRandomInt(0, 5);
+        thirdStageGreen.push(cardsGreenAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].thirdStage.brownCards; i++) {
+        let randomNum = getRandomInt(0, 9);
+        thirdStageBrown.push(cardsBrownAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].thirdStage.blueCards; i++) {
+        let randomNum = getRandomInt(0, 2);
+        thirdStageBlue.push(cardsBlueAll[randomNum]);
+    }
+}
+thirdStageAzathoth ();
+
+console.log(firstStageGreen);
+console.log(firstStageBrown);
+console.log(firstStageBlue);
+
+console.log(secondStageGreen);
+console.log(secondStageBrown);
+console.log(secondStageBlue);
+
+console.log(thirdStageGreen);
+console.log(thirdStageBrown);
+console.log(thirdStageBlue);
 
 
-console.log(allStageGreenAzathoth);
-allStageColor ();
+
+
+
 console.log(cardsGreenAll);
 console.log(cardsBrownAll);
 console.log(cardsBlueAll);
