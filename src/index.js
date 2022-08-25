@@ -33,7 +33,7 @@ function randomGreenCards() {
     let normalFilter = greenCards.filter(dif => dif.difficulty === 'normal').sort(() => Math.round(Math.random() * 100) - 50);
     let hardFilter = greenCards.filter(dif => dif.difficulty === 'hard').sort(() => Math.round(Math.random() * 100) - 50);
     let difference;
-    let resultArray = greenCards;
+    let resultArray = greenCards.sort(() => Math.round(Math.random() * 100) - 50);;
     if (isDifficulty === 'veryEasy') {
         difference = sum - easyFilter.length;
         resultArray = [...easyFilter, ...normalFilter.slice(0,difference)]
@@ -57,7 +57,7 @@ function randomBlueCards() {
     let normalFilter = blueCards.filter(dif => dif.difficulty === 'normal').sort(() => Math.round(Math.random() * 100) - 50);
     let hardFilter = blueCards.filter(dif => dif.difficulty === 'hard').sort(() => Math.round(Math.random() * 100) - 50);
     let difference;
-    let resultArray = blueCards;
+    let resultArray = blueCards.sort(() => Math.round(Math.random() * 100) - 50);;
     if (isDifficulty === 'veryEasy') {
         difference = sum - easyFilter.length;
         resultArray = [...easyFilter, ...normalFilter.slice(0,difference)]
@@ -81,7 +81,7 @@ function randomBrownCards() {
     let normalFilter = brownCards.filter(dif => dif.difficulty === 'normal').sort(() => Math.round(Math.random() * 100) - 50);
     let hardFilter = brownCards.filter(dif => dif.difficulty === 'hard').sort(() => Math.round(Math.random() * 100) - 50);
     let difference;
-    let resultArray = brownCards;
+    let resultArray = brownCards.sort(() => Math.round(Math.random() * 100) - 50);;
     if (isDifficulty === 'veryEasy') {
         difference = sum - easyFilter.length;
         resultArray = [...easyFilter, ...normalFilter.slice(0,difference)]
