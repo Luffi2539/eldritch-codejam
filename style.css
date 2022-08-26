@@ -135,14 +135,33 @@ align-items: center;
     display: flex;
     background-position: center;
     background-image: url("assets/card.jpg");
-    height: 68%;
-    width: 50%;
+    height: 25%;
+    width: 30%;
     background-repeat: no-repeat;
+    margin-top: 80px;
+    border-radius: 20px;
+    
 }
 
 .deck{
     display: none;
 }
-/* .card{
 
-} */
+.card.activ{
+  display: flex;
+  margin-top: 20px;
+  height: 25%;
+  width: 30%;
+  background-image: url("assets/card.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.card {
+  display: none;
+}
+
+.deck.activ, .card.activ:hover{
+  cursor: pointer;
+}

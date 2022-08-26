@@ -15,13 +15,15 @@ const normal = document.querySelector(".normal");
 const hard = document.querySelector(".hard");
 const shuffleDeck = document.querySelector(".shuffle_deck");
 const deck = document.querySelector(".deck");
+const randomCard=document.querySelector('.card');
 
 ancient.addEventListener("click", hardnessChoise);
 easy.addEventListener("click", shuffleButton1);
 normal.addEventListener("click", shuffleButton2);
 hard.addEventListener("click", shuffleButton3);
 shuffleDeck.addEventListener("click", Deck);
-deck.addEventListener("click", randomCard);
+deck.addEventListener("click", randomCardFunc);
+
 
 // Функция отображения уровней сложности
 
@@ -37,6 +39,7 @@ function shuffleButton1() {
   easy.classList.add("activ");
   hard.classList.remove("activ");
   normal.classList.remove("activ");
+  randomCard.classList.remove("activ");
 }
 
 function shuffleButton2() {
@@ -45,6 +48,7 @@ function shuffleButton2() {
   easy.classList.remove("activ");
   hard.classList.remove("activ");
   normal.classList.add("activ");
+  randomCard.classList.remove("activ");
 }
 
 function shuffleButton3() {
@@ -53,6 +57,7 @@ function shuffleButton3() {
   easy.classList.remove("activ");
   hard.classList.add("activ");
   normal.classList.remove("activ");
+  randomCard.classList.remove("activ");
 }
 
 // Функция отображения колоды, после нажатия на кнопку перемешивания колоды
@@ -64,7 +69,8 @@ function Deck() {
 
 // Функция отображения рандомной карты снизу колоды
 
-function randomCard (){
-
+function randomCardFunc (){
+  randomCard.classList.add("activ");
+  shuffleDeck.classList.remove("activ");
 }
 
