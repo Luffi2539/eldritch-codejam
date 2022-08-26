@@ -3,41 +3,9 @@ import cardsDataBrown from './data/mythicCards/brown/indexBrown.js';
 import cardsDataBlue from './data/mythicCards/blue/indexBlue.js';
 
 // ---------------------------------------
-const knife = new Audio('./assets/Audio/6802dff441a6d4e (mp3cut.net).mp3');
-const rain = document.querySelector('audio');
-const music = new Audio('./assets/Audio/film-ujasov-kino.mp3');
-const difficulty = document.querySelectorAll(".difficulty");
-const takeCard = document.querySelector(".deck");
-const card1 = document.querySelector('.card1');
-const card2 = document.querySelector('.card2');
-const card3 = document.querySelector('.card3');
-const card4 = document.querySelector('.card4');
-
-function playAudio(item, audio, volume) {
-    item.addEventListener("click", () => {
-        audio.play();
-    });
-    audio.volume = volume;
-}
-
-difficulty.forEach(item => {
-    item.addEventListener("click", () => {
-        knife.play();
-        knife.volume = .1;
-    });
-});
-
-playAudio(card1, new Audio('./assets/Audio/monster1.mp3'), .1);
-playAudio(card2, new Audio('./assets/Audio/monster2.mp3'), .1);
-playAudio(card3, new Audio('./assets/Audio/monster3.mp3'), .1);
-playAudio(card4, new Audio('./assets/Audio/monster4.mp3'), .1);
-playAudio(takeCard, new Audio('./assets/Audio/mb_card_deal_08.mp3'), .1);
-
-document.querySelector('.rain').volume = .2;
-
-// ---------------------------------------
-const cards = document.querySelectorAll('.ancient-cards img')
+const cards = document.querySelectorAll('.ancient-cards img');
 const deck = document.querySelector('.deck-of-cards');
+const difficulty = document.querySelectorAll(".difficulty");
 
 cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -55,2535 +23,317 @@ difficulty.forEach(item => {
 });
 
 // ---------------------------------------
-const firstGreen = document.querySelector('.first-green');
-const firstBrown = document.querySelector('.first-brown');
-const firstBlue = document.querySelector('.first-blue');
-const secondGreen = document.querySelector('.second-green');
-const secondBrown = document.querySelector('.second-brown');
-const secondBlue = document.querySelector('.second-blue');
-const thirdGreen = document.querySelector('.third-green');
-const thirdBrown = document.querySelector('.third-brown');
-const thirdBlue = document.querySelector('.third-blue');
-
-const difficultyBlock = document.querySelector('.difficulty-level');
-
-card1.addEventListener('click', () => {
-    firstGreen.value = 0;
-    firstBrown.value = 2;
-    firstBlue.value = 2;
-    secondGreen.value = 1;
-    secondBrown.value = 3;
-    secondBlue.value = 0;
-    thirdGreen.value = 3;
-    thirdBrown.value = 4;
-    thirdBlue.value = 0;
-    difficultyBlock.classList.add('show');
-    difficultyBlock.classList.remove('hide');
-});
-
-card2.addEventListener('click', () => {
-    firstGreen.value = 1;
-    firstBrown.value = 2;
-    firstBlue.value = 1;
-    secondGreen.value = 3;
-    secondBrown.value = 2;
-    secondBlue.value = 1;
-    thirdGreen.value = 2;
-    thirdBrown.value = 4;
-    thirdBlue.value = 0;
-    difficultyBlock.classList.add('show');
-    difficultyBlock.classList.remove('hide');
-});
-
-card3.addEventListener('click', () => {
-    firstGreen.value = 0;
-    firstBrown.value = 2;
-    firstBlue.value = 1;
-    secondGreen.value = 2;
-    secondBrown.value = 3;
-    secondBlue.value = 1;
-    thirdGreen.value = 3;
-    thirdBrown.value = 4;
-    thirdBlue.value = 0;
-    difficultyBlock.classList.add('show');
-    difficultyBlock.classList.remove('hide');
-});
-
-card4.addEventListener('click', () => {
-    firstGreen.value = 1;
-    firstBrown.value = 2;
-    firstBlue.value = 1;
-    secondGreen.value = 2;
-    secondBrown.value = 3;
-    secondBlue.value = 1;
-    thirdGreen.value = 2;
-    thirdBrown.value = 4;
-    thirdBlue.value = 0;
-    difficultyBlock.classList.add('show');
-    difficultyBlock.classList.remove('hide');
-});
-
-// ---------------------------------------
-
-let arrayOfGreenEasy = []; // 5
-let arrayOfBrownEasy = []; // 5
-let arrayOfBlueEasy = []; // 4
-
-let arrayOfGreenNormal = []; // 8
-let arrayOfBrownNormal = []; // 11
-let arrayOfBlueNormal = []; // 4
-
-let arrayOfGreenHard = []; // 5
-let arrayOfBrownHard = []; // 5
-let arrayOfBlueHard = []; // 4
-
-for (let i = 0; i < cardsDataGreen.length; i++) {
-    if (cardsDataGreen[i].difficulty === 'easy') {
-        arrayOfGreenEasy.push(cardsDataGreen[i]);
-    } else if (cardsDataGreen[i].difficulty === 'normal') {
-        arrayOfGreenNormal.push(cardsDataGreen[i]);
-    } else {
-        arrayOfGreenHard.push(cardsDataGreen[i]);
-    }
-}
-
-for (let i = 0; i < cardsDataBrown.length; i++) {
-    if (cardsDataBrown[i].difficulty === 'easy') {
-        arrayOfBrownEasy.push(cardsDataBrown[i]);
-    } else if (cardsDataBrown[i].difficulty === 'normal') {
-        arrayOfBrownNormal.push(cardsDataBrown[i]);
-    } else {
-        arrayOfBrownHard.push(cardsDataBrown[i]);
-    }
-}
-
-for (let i = 0; i < cardsDataBlue.length; i++) {
-    if (cardsDataBlue[i].difficulty === 'easy') {
-        arrayOfBlueEasy.push(cardsDataBlue[i]);
-    } else if (cardsDataBlue[i].difficulty === 'normal') {
-        arrayOfBlueNormal.push(cardsDataBlue[i]);
-    } else {
-        arrayOfBlueHard.push(cardsDataBlue[i]);
-    }
-}
-
-// ---------------------------------------
-
-const veryEasyDifficult = document.querySelector('.very-easy');
-const easyDifficult = document.querySelector('.easy');
-const normalDifficult = document.querySelector('.normal');
-const hardDifficult = document.querySelector('.hard');
-const veryHardDifficult = document.querySelector('.very-hard');
-
-let deckFirstStage = [];
-let deckSecondStage = [];
-let deckThirdStage = [];
-
-function sumCardsValues(color) {
-
-    if (color === 'green') {
-        return +firstGreen.value + +secondGreen.value + +thirdGreen.value;
-    }
-    if (color === 'brown') {
-        return +firstBrown.value + +secondBrown.value + +thirdBrown.value;
-    }
-    if (color === 'blue') {
-        return +firstBlue.value + +secondBlue.value + +thirdBlue.value;
-    }
-}
-
-function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-}
-
-card1.addEventListener('click', () => {
-
-    takeCard.classList.remove('hide');
-
-    veryEasyDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenEasy[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_1 = firstBrown.value
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = thirdGreen.value;
-        while (value_5 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = firstBlue.value;
-        while (value_6 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_6--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstBrownArray.concat(firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    });
-
-    easyDifficult.addEventListener('click', () => {
-
-        let arrayOfGreenEasyAndVeryEasy = arrayOfGreenEasy.concat(arrayOfGreenNormal);
-        let arrayOfBrownEasyAndVeryEasy = arrayOfBrownEasy.concat(arrayOfBrownNormal);
-        let arrayOfBlueEasyAndVeryEasy = arrayOfBlueEasy.concat(arrayOfBlueNormal);
-
-        shuffle(arrayOfGreenEasyAndVeryEasy);
-        shuffle(arrayOfBrownEasyAndVeryEasy);
-        shuffle(arrayOfBlueEasyAndVeryEasy);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenEasyAndVeryEasy[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('brown'); i++) {
-            requiredCardsBrown.push(arrayOfBrownEasyAndVeryEasy[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasyAndVeryEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_1 = firstBrown.value
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = thirdGreen.value;
-        while (value_5 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = firstBlue.value;
-        while (value_6 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_6--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstBrownArray.concat(firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    normalDifficult.addEventListener('click', () => {
-
-        let arrayOfGreen = arrayOfGreenEasy.concat(arrayOfGreenNormal, arrayOfGreenHard);
-        let arrayOfBrown = arrayOfBrownEasy.concat(arrayOfBrownNormal, arrayOfBrownHard);
-        let arrayOfBlue = arrayOfBlueEasy.concat(arrayOfBlueNormal, arrayOfBlueHard);
-
-        shuffle(arrayOfGreen);
-        shuffle(arrayOfBrown);
-        shuffle(arrayOfBlue);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreen[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('brown'); i++) {
-            requiredCardsBrown.push(arrayOfBrown[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlue[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    hardDifficult.addEventListener('click', () => {
-
-        let arrayOfGreenNormalAndHard = arrayOfGreenNormal.concat(arrayOfGreenHard);
-        let arrayOfBrownNormalAndHard = arrayOfBrownNormal.concat(arrayOfBrownHard);
-        let arrayOfBlueNormalAndHard = arrayOfBlueNormal.concat(arrayOfBlueHard);
-
-        shuffle(arrayOfGreenNormalAndHard);
-        shuffle(arrayOfBrownNormalAndHard);
-        shuffle(arrayOfBlueNormalAndHard);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenNormalAndHard[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('brown'); i++) {
-            requiredCardsBrown.push(arrayOfBrownNormalAndHard[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueNormalAndHard[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    veryHardDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenHard[i]);
-        }
-
-        if (arrayOfBrownHard.length <= sumCardsValues('brown')) {
-            arrayOfBrownHard.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownHard.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueHard[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-    })
-
-});
-
-card2.addEventListener('click', () => {
-
-    takeCard.classList.remove('hide');
-
-    veryEasyDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    });
-
-    easyDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstBrownArray.concat(firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    normalDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    hardDifficult.addEventListener('click', () => {
-
-        let arrayOfGreenNormalAndHard = arrayOfGreenNormal.concat(arrayOfGreenHard);
-        let arrayOfBrownNormalAndHard = arrayOfBrownNormal.concat(arrayOfBrownHard);
-        let arrayOfBlueNormalAndHard = arrayOfBlueNormal.concat(arrayOfBlueHard);
-
-        shuffle(arrayOfGreenNormalAndHard);
-        shuffle(arrayOfBrownNormalAndHard);
-        shuffle(arrayOfBlueNormalAndHard);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    veryHardDifficult.addEventListener('click', () => {
-
-
-        let arrayOfGreenNormalAndHard = arrayOfGreenNormal.concat(arrayOfGreenHard);
-        let arrayOfBrownNormalAndHard = arrayOfBrownNormal.concat(arrayOfBrownHard);
-        let arrayOfBlueNormalAndHard = arrayOfBlueNormal.concat(arrayOfBlueHard);
-
-        shuffle(arrayOfGreenNormalAndHard);
-        shuffle(arrayOfBrownNormalAndHard);
-        shuffle(arrayOfBlueNormalAndHard);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-});
-
-card3.addEventListener('click', () => {
-
-    takeCard.classList.remove('hide');
-
-    veryEasyDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenEasy[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstBrown.value
-        while (value_0 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_0--;
-        }
-
-        let value_1 = secondBrown.value;
-        while (value_1 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBlue.value;
-        while (value_2 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = thirdGreen.value;
-        while (value_5 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = firstBlue.value;
-        while (value_6 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_6--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstBrownArray.concat(firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    });
-
-    easyDifficult.addEventListener('click', () => {
-
-        let arrayOfGreenEasyAndVeryEasy = arrayOfGreenEasy.concat(arrayOfGreenNormal);
-        let arrayOfBrownEasyAndVeryEasy = arrayOfBrownEasy.concat(arrayOfBrownNormal);
-        let arrayOfBlueEasyAndVeryEasy = arrayOfBlueEasy.concat(arrayOfBlueNormal);
-
-        shuffle(arrayOfGreenEasyAndVeryEasy);
-        shuffle(arrayOfBrownEasyAndVeryEasy);
-        shuffle(arrayOfBlueEasyAndVeryEasy);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenEasyAndVeryEasy[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('brown'); i++) {
-            requiredCardsBrown.push(arrayOfBrownEasyAndVeryEasy[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasyAndVeryEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstBrown.value
-        while (value_0 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_0--;
-        }
-
-        let value_1 = secondBrown.value;
-        while (value_1 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBlue.value;
-        while (value_2 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = thirdGreen.value;
-        while (value_5 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = firstBlue.value;
-        while (value_6 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_6--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstBrownArray.concat(firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    normalDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    hardDifficult.addEventListener('click', () => {
-
-        let arrayOfGreenNormalAndHard = arrayOfGreenNormal.concat(arrayOfGreenHard);
-        let arrayOfBrownNormalAndHard = arrayOfBrownNormal.concat(arrayOfBrownHard);
-        let arrayOfBlueNormalAndHard = arrayOfBlueNormal.concat(arrayOfBlueHard);
-
-        shuffle(arrayOfGreenNormalAndHard);
-        shuffle(arrayOfBrownNormalAndHard);
-        shuffle(arrayOfBlueNormalAndHard);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    veryHardDifficult.addEventListener('click', () => {
-
-
-        let arrayOfGreenNormalAndHard = arrayOfGreenNormal.concat(arrayOfGreenHard);
-        let arrayOfBrownNormalAndHard = arrayOfBrownNormal.concat(arrayOfBrownHard);
-        let arrayOfBlueNormalAndHard = arrayOfBlueNormal.concat(arrayOfBlueHard);
-
-        shuffle(arrayOfGreenNormalAndHard);
-        shuffle(arrayOfBrownNormalAndHard);
-        shuffle(arrayOfBlueNormalAndHard);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value;
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value;
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = thirdBrown.value;
-        while (value_3 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_3--;
-        }
-
-        let value_4 = secondGreen.value;
-        while (value_4 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_4--;
-        }
-
-        let value_5 = secondBlue.value;
-        while (value_5 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-});
-
-card4.addEventListener('click', () => {
-
-    takeCard.classList.remove('hide');
-
-    veryEasyDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenEasy[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = secondBlue.value;
-        while (value_3 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_3--;
-        }
-
-        let value_4 = thirdBrown.value;
-        while (value_4 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_4--;
-        }
-
-        let value_5 = secondGreen.value;
-        while (value_5 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    });
-
-    easyDifficult.addEventListener('click', () => {
-
-        let arrayOfGreenEasyAndVeryEasy = arrayOfGreenEasy.concat(arrayOfGreenNormal);
-        let arrayOfBrownEasyAndVeryEasy = arrayOfBrownEasy.concat(arrayOfBrownNormal);
-        let arrayOfBlueEasyAndVeryEasy = arrayOfBlueEasy.concat(arrayOfBlueNormal);
-
-        shuffle(arrayOfGreenEasyAndVeryEasy);
-        shuffle(arrayOfBrownEasyAndVeryEasy);
-        shuffle(arrayOfBlueEasyAndVeryEasy);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        for (let i = 0; i < sumCardsValues('green'); i++) {
-            requiredCardsGreen.push(arrayOfGreenEasyAndVeryEasy[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('brown'); i++) {
-            requiredCardsBrown.push(arrayOfBrownEasyAndVeryEasy[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasyAndVeryEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = secondBlue.value;
-        while (value_3 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_3--;
-        }
-
-        let value_4 = thirdBrown.value;
-        while (value_4 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_4--;
-        }
-
-        let value_5 = secondGreen.value;
-        while (value_5 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    normalDifficult.addEventListener('click', () => {
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = secondBlue.value;
-        while (value_3 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_3--;
-        }
-
-        let value_4 = thirdBrown.value;
-        while (value_4 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_4--;
-        }
-
-        let value_5 = secondGreen.value;
-        while (value_5 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    hardDifficult.addEventListener('click', () => {
-
-        let arrayOfGreenNormalAndHard = arrayOfGreenNormal.concat(arrayOfGreenHard);
-        let arrayOfBrownNormalAndHard = arrayOfBrownNormal.concat(arrayOfBrownHard);
-        let arrayOfBlueNormalAndHard = arrayOfBlueNormal.concat(arrayOfBlueHard);
-
-        shuffle(arrayOfGreenNormalAndHard);
-        shuffle(arrayOfBrownNormalAndHard);
-        shuffle(arrayOfBlueNormalAndHard);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = secondBlue.value;
-        while (value_3 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_3--;
-        }
-
-        let value_4 = thirdBrown.value;
-        while (value_4 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_4--;
-        }
-
-        let value_5 = secondGreen.value;
-        while (value_5 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-    veryHardDifficult.addEventListener('click', () => {
-
-
-        let arrayOfGreenNormalAndHard = arrayOfGreenNormal.concat(arrayOfGreenHard);
-        let arrayOfBrownNormalAndHard = arrayOfBrownNormal.concat(arrayOfBrownHard);
-        let arrayOfBlueNormalAndHard = arrayOfBlueNormal.concat(arrayOfBlueHard);
-
-        shuffle(arrayOfGreenNormalAndHard);
-        shuffle(arrayOfBrownNormalAndHard);
-        shuffle(arrayOfBlueNormalAndHard);
-
-        // ----------------------------------- //
-
-        let requiredCardsGreen = [];
-        let requiredCardsBrown = [];
-        let requiredCardsBlue = [];
-
-        if (arrayOfGreenEasy.length <= sumCardsValues('green')) {
-            arrayOfGreenEasy.forEach(item => requiredCardsGreen.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('green') - arrayOfGreenEasy.length; i++) {
-            requiredCardsGreen.push(arrayOfGreenNormal[i]);
-        }
-
-        if (arrayOfBrownEasy.length <= sumCardsValues('brown')) {
-            arrayOfBrownEasy.forEach(item => requiredCardsBrown.push(item));
-        }
-
-        for (let i = 0; i < sumCardsValues('brown') - arrayOfBrownEasy.length; i++) {
-            requiredCardsBrown.push(arrayOfBrownNormal[i]);
-        }
-
-        for (let i = 0; i < sumCardsValues('blue'); i++) {
-            requiredCardsBlue.push(arrayOfBlueEasy[i]);
-        }
-
-        shuffle(requiredCardsGreen);
-        shuffle(requiredCardsBrown);
-        shuffle(requiredCardsBlue);
-
-        // ----------------------------------- //
-
-        let firstGreenArray = [];
-        let firstBrownArray = [];
-        let firstBlueArray = [];
-
-        let secondGreenArray = [];
-        let secondBrownArray = [];
-        let secondBlueArray = [];
-
-        let thirdGreenArray = [];
-        let thirdBrownArray = [];
-
-        let value_0 = firstGreen.value
-        while (value_0 > 0) {
-            firstGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_0--;
-        }
-
-        let value_1 = firstBrown.value
-        while (value_1 > 0) {
-            firstBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_1--;
-        }
-
-        let value_2 = secondBrown.value;
-        while (value_2 > 0) {
-            secondBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_2--;
-        }
-
-        let value_3 = secondBlue.value;
-        while (value_3 > 0) {
-            secondBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_3--;
-        }
-
-        let value_4 = thirdBrown.value;
-        while (value_4 > 0) {
-            thirdBrownArray.push(requiredCardsBrown[0]);
-            requiredCardsBrown = requiredCardsBrown.filter(function (item) { return item !== requiredCardsBrown[0] });
-            value_4--;
-        }
-
-        let value_5 = secondGreen.value;
-        while (value_5 > 0) {
-            secondGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_5--;
-        }
-
-        let value_6 = thirdGreen.value;
-        while (value_6 > 0) {
-            thirdGreenArray.push(requiredCardsGreen[0]);
-            requiredCardsGreen = requiredCardsGreen.filter(function (item) { return item !== requiredCardsGreen[0] });
-            value_6--;
-        }
-
-        let value_7 = firstBlue.value;
-        while (value_7 > 0) {
-            firstBlueArray.push(requiredCardsBlue[0]);
-            requiredCardsBlue = requiredCardsBlue.filter(function (item) { return item !== requiredCardsBlue[0] });
-            value_7--;
-        }
-
-        // ----------------------------------- //
-
-        let firstCards = firstGreenArray.concat(firstBrownArray, firstBlueArray);
-        let secondCards = secondGreenArray.concat(secondBrownArray, secondBlueArray);
-        let thirdCards = thirdGreenArray.concat(thirdBrownArray);
-
-        shuffle(firstCards);
-        shuffle(secondCards);
-        shuffle(thirdCards);
-
-        deckFirstStage = firstCards;
-        deckSecondStage = secondCards;
-        deckThirdStage = thirdCards;
-
-    })
-
-});
-
-// ---------------------------------------
+const card1 = document.querySelector('.card1');
+const card2 = document.querySelector('.card2');
+const card3 = document.querySelector('.card3');
+const card4 = document.querySelector('.card4');
+
+const veryEasy = document.querySelector('.very-easy');
+const easy = document.querySelector('.easy');
+const normal = document.querySelector('.normal');
+const hard = document.querySelector('.hard');
+const veryHard = document.querySelector('.very-hard');
+
+const firstGreenValue = document.querySelector('.first-green');
+const firstBrownValue = document.querySelector('.first-brown');
+const firstBlueValue = document.querySelector('.first-blue');
+
+const secondGreenValue = document.querySelector('.second-green');
+const secondBrownValue = document.querySelector('.second-brown');
+const secondBlueValue = document.querySelector('.second-blue');
+
+const thirdGreenValue = document.querySelector('.third-green');
+const thirdBrownValue = document.querySelector('.third-brown');
+const thirdBlueValue = document.querySelector('.third-blue');
 
 const randomCard = document.querySelector('.random-card');
 
-takeCard.addEventListener('click', () => {
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+    return array;
+};
+
+function cardsColorValue(value_1, value_2, value_3, value_4, value_5, value_6, value_7, value_8, value_9) {
+    document.querySelector('.first-green').value = value_1;
+    document.querySelector('.first-brown').value = value_2;
+    document.querySelector('.first-blue').value = value_3;
+    document.querySelector('.second-green').value = value_4;
+    document.querySelector('.second-brown').value = value_5;
+    document.querySelector('.second-blue').value = value_6;
+    document.querySelector('.third-green').value = value_7;
+    document.querySelector('.third-brown').value = value_8;
+    document.querySelector('.third-blue').value = value_9;
+    return value_1 + +value_2 + +value_3 + +value_4 + +value_5 + +value_6 + +value_7 + +value_8 + +value_9;
+};
+
+function sumValues(card) {
+    if (card === 'card1') {
+        return cardsColorValue(0, 2, 2, 1, 3, 0, 3, 4, 0);
+    }
+    if (card === 'card2') {
+        return cardsColorValue(1, 2, 1, 3, 2, 1, 2, 4, 0);
+    }
+    if (card === 'card3') {
+        return cardsColorValue(0, 2, 1, 2, 3, 1, 3, 4, 0);
+    }
+    if (card === 'card4') {
+        return cardsColorValue(1, 2, 1, 2, 3, 1, 2, 4, 0);
+    }
+};
+
+let allCards = cardsDataGreen.concat(cardsDataBrown, cardsDataBlue);
+
+function createArrayWithColorAndDifficult(color, difficulty) {
+    let array = [];
+    for (let i = 0; i < allCards.length; i++) {
+        if (allCards[i].color === color && allCards[i].difficulty === difficulty) {
+            array.push(allCards[i]);
+        }
+    }
+    return array;
+}
+
+let arrayEasyNormalGreen = createArrayWithColorAndDifficult('green', 'easy').concat(createArrayWithColorAndDifficult('green', 'normal'));
+let arrayEasyNormalBrown = createArrayWithColorAndDifficult('brown', 'easy').concat(createArrayWithColorAndDifficult('brown', 'normal'));
+let arrayEasyNormalBlue = createArrayWithColorAndDifficult('blue', 'easy').concat(createArrayWithColorAndDifficult('blue', 'normal'));
+
+let arrayHardNormalGreen = createArrayWithColorAndDifficult('green', 'hard').concat(createArrayWithColorAndDifficult('green', 'normal'));
+let arrayHardNormalBrown = createArrayWithColorAndDifficult('brown', 'hard').concat(createArrayWithColorAndDifficult('brown', 'normal'));
+let arrayHardNormalBlue = createArrayWithColorAndDifficult('blue', 'hard').concat(createArrayWithColorAndDifficult('blue', 'normal'));
+
+function pushFromArray_1(dif, stage, value, array, dif_1) {
+    if (dif == 'simple') {
+        shuffle(array);
+        for (let i = 0; i < value; i++) {
+            stage.push(array[0]);
+            array.shift();
+        }
+    }
+    if (dif == 'complex') {
+        for (let i = 0; i < value; i++) {
+            if (array[0].difficulty === dif_1) {
+                stage.push(array[0]);
+                array.shift();
+            } else if (array[0].difficulty === 'normal') {
+                shuffle(array);
+                stage.push(array[0]);
+                array.shift();
+            }
+        }
+    }
+}
+
+function createArrayOfStage(dif, arr_1, arr_2, arr_3, val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_9, dif_1) {
+    let stage_1 = []; let stage_2 = []; let stage_3 = [];
+    let stage_4 = []; let stage_5 = []; let stage_6 = [];
+    let stage_7 = []; let stage_8 = []; let stage_9 = [];
+
+    pushFromArray_1(dif, stage_1, val_1, arr_1, dif_1);
+    pushFromArray_1(dif, stage_2, val_2, arr_2, dif_1);
+    pushFromArray_1(dif, stage_3, val_3, arr_3, dif_1);
+    pushFromArray_1(dif, stage_4, val_4, arr_1, dif_1);
+    pushFromArray_1(dif, stage_5, val_5, arr_2, dif_1);
+    pushFromArray_1(dif, stage_6, val_6, arr_3, dif_1);
+    pushFromArray_1(dif, stage_7, val_7, arr_1, dif_1);
+    pushFromArray_1(dif, stage_8, val_8, arr_2, dif_1);
+    pushFromArray_1(dif, stage_9, val_9, arr_3, dif_1);
+
+    return shuffle(stage_1.concat(stage_2, stage_3, stage_4, stage_5, stage_6, stage_7, stage_8, stage_9));
+};
+
+let green_1 = [];
+let brown_1 = [];
+let blue_1 = [];
+
+let green_2 = [];
+let brown_2 = [];
+let blue_2 = [];
+
+let green_3 = [];
+let brown_3 = [];
+let blue_3 = [];
+
+function splitArrayOfCards(cards, array, color, value) {
+    for (let i = 0; i < cards.length; i++) {
+        if (cards[i].color === color) {
+            array.push(cards[i]);
+        }
+    }
+    array.length = value;
+    for (let i = 0; i < cards.length; i++) {
+        let myIndex = cards.indexOf(array[i]);
+        if (myIndex !== -1) {
+            cards.splice(myIndex, 1);
+        }
+    }
+    return shuffle(array);
+};
+
+let array1 = [];
+let array2 = [];
+let array3 = [];
+
+function divisionToCircles(cards, array) {
+    splitArrayOfCards(cards, green_1, 'green', array[0]);
+    splitArrayOfCards(cards, brown_1, 'brown', array[1]);
+    splitArrayOfCards(cards, blue_1, 'blue', array[2]);
+    splitArrayOfCards(cards, green_2, 'green', array[3]);
+    splitArrayOfCards(cards, brown_2, 'brown', array[4]);
+    splitArrayOfCards(cards, blue_2, 'blue', array[5]);
+    splitArrayOfCards(cards, green_3, 'green', array[6]);
+    splitArrayOfCards(cards, brown_3, 'brown', array[7]);
+    splitArrayOfCards(cards, blue_3, 'blue', array[8]);
+    array1 = sumValuesCirclesOneStage(green_1, brown_1, blue_1);
+    array2 = sumValuesCirclesOneStage(green_2, brown_2, blue_2);
+    array3 = sumValuesCirclesOneStage(green_3, brown_3, blue_3);
+};
+
+card1.addEventListener('click', () => {
+    cardsColorValue(0, 2, 2, 1, 3, 0, 3, 4, 0);
+    let array = [0, 2, 2, 1, 3, 0, 3, 4, 0];
+    veryEasy.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 0, 2, 2, 1, 3, 0, 3, 4, 0, 'easy');
+        divisionToCircles(cards, array);
+    })
+    easy.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 0, 2, 2, 1, 3, 0, 3, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    normal.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', cardsDataGreen, cardsDataBrown, cardsDataBlue, 0, 2, 2, 1, 3, 0, 3, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    hard.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 0, 2, 2, 1, 3, 0, 3, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    veryHard.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 0, 2, 2, 1, 3, 0, 3, 4, 0, 'hard');
+        divisionToCircles(cards, array);
+    })
+
+});
+
+card2.addEventListener('click', () => {
+    cardsColorValue(1, 2, 1, 3, 2, 1, 2, 4, 0);
+    let array = [1, 2, 1, 3, 2, 1, 2, 4, 0];
+    veryEasy.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 1, 2, 1, 3, 2, 1, 2, 4, 0, 'easy');
+        divisionToCircles(cards, array);
+    })
+    easy.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 1, 2, 1, 3, 2, 1, 2, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    normal.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', cardsDataGreen, cardsDataBrown, cardsDataBlue, 1, 2, 1, 3, 2, 1, 2, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    hard.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 1, 2, 1, 3, 2, 1, 2, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    veryHard.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 1, 2, 1, 3, 2, 1, 2, 4, 0, 'hard');
+        divisionToCircles(cards, array);
+    })
+});
+
+card3.addEventListener('click', () => {
+    cardsColorValue(0, 2, 1, 2, 3, 1, 3, 4, 0);
+    let array = [0, 2, 1, 2, 3, 1, 3, 4, 0];
+    veryEasy.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 0, 2, 1, 2, 3, 1, 3, 4, 0, 'easy');
+        divisionToCircles(cards, array);
+    })
+    easy.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 0, 2, 1, 2, 3, 1, 3, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    normal.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', cardsDataGreen, cardsDataBrown, cardsDataBlue, 0, 2, 1, 2, 3, 1, 3, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    hard.addEventListener('click', () => {
+        let cards = createArrayOfStage('simple', arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 0, 2, 1, 2, 3, 1, 3, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    veryHard.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 0, 2, 1, 2, 3, 1, 3, 4, 0, 'hard');
+        divisionToCircles(cards, array);
+    })
+});
+
+card4.addEventListener('click', () => {
+    cardsColorValue(1, 2, 1, 2, 3, 1, 2, 4, 0);
+    let array = [1, 2, 1, 2, 3, 1, 2, 4, 0];
+    veryEasy.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 1, 2, 1, 2, 3, 1, 2, 4, 0, 'easy');
+        divisionToCircles(cards, array);
+    })
+    easy.addEventListener('click', () => {
+        let cards = createArrayOfStage(arrayEasyNormalGreen, arrayEasyNormalBrown, arrayEasyNormalBlue, 1, 2, 1, 2, 3, 1, 2, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    normal.addEventListener('click', () => {
+        let cards = createArrayOfStage(cardsDataGreen, cardsDataBrown, cardsDataBlue, 1, 2, 1, 2, 3, 1, 2, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    hard.addEventListener('click', () => {
+        let cards = createArrayOfStage(arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 1, 2, 1, 2, 3, 1, 2, 4, 0);
+        divisionToCircles(cards, array);
+    })
+    veryHard.addEventListener('click', () => {
+        let cards = createArrayOfStage('complex', arrayHardNormalGreen, arrayHardNormalBrown, arrayHardNormalBlue, 1, 2, 1, 2, 3, 1, 2, 4, 0, 'hard');
+        divisionToCircles(cards, array);
+    })
+});
+
+function sumValuesCirclesOneStage(circle_1, circle_2, circle_3) {
+    return circle_1.concat(circle_2, circle_3);
+}
+
+document.querySelector('.deck').addEventListener('click', () => {
 
     randomCard.classList.add('show');
-
-    if (deckFirstStage.length > 0) {
-        randomCard.style.background = `url(${deckFirstStage[0].cardFace}) center/cover`;
-        if (deckFirstStage[0].color === 'green') {
-            firstGreen.value--;
+    shuffle(array1);
+    shuffle(array2);
+    shuffle(array3);
+    if (array1.length > 0) {
+        randomCard.style.background = `url(${array1[0].cardFace}) center/cover`;
+        if (array1[0].color === 'green') {
+            firstGreenValue.value--;
         }
-        if (deckFirstStage[0].color === 'brown') {
-            firstBrown.value--;
+        if (array1[0].color === 'brown') {
+            firstBrownValue.value--;
         }
-        if (deckFirstStage[0].color === 'blue') {
-            firstBlue.value--;
+        if (array1[0].color === 'blue') {
+            firstBlueValue.value--;
         }
-        deckFirstStage.shift();
-
-    } else if (deckFirstStage.length === 0 && deckSecondStage.length > 0) {
-        randomCard.style.background = `url(${deckSecondStage[0].cardFace}) center/cover`;
-        if (deckSecondStage[0].color === 'green') {
-            secondGreen.value--;
+        array1.shift();
+    } else if (array1.length === 0 && array2.length > 0) {
+        randomCard.style.background = `url(${array2[0].cardFace}) center/cover`;
+        if (array2[0].color === 'green') {
+            secondGreenValue.value--;
         }
-        if (deckSecondStage[0].color === 'brown') {
-            secondBrown.value--;
+        if (array2[0].color === 'brown') {
+            secondBrownValue.value--;
         }
-        if (deckSecondStage[0].color === 'blue') {
-            secondBlue.value--;
+        if (array2[0].color === 'blue') {
+            secondBlueValue.value--;
         }
-        deckSecondStage.shift();
-
-    } else if (deckSecondStage.length === 0 && deckThirdStage.length > 0) {
-        randomCard.style.background = `url(${deckThirdStage[0].cardFace}) center/cover`;
-        if (deckThirdStage[0].color === 'green') {
-            thirdGreen.value--;
+        array2.shift();
+    } else if (array2.length === 0 && array3.length > 0) {
+        randomCard.style.background = `url(${array3[0].cardFace}) center/cover`;
+        if (array3[0].color === 'green') {
+            thirdGreenValue.value--;
         }
-        if (deckThirdStage[0].color === 'brown') {
-            thirdBrown.value--;
+        if (array3[0].color === 'brown') {
+            thirdBrownValue.value--;
         }
-        if (deckThirdStage[0].color === 'blue') {
-            thirdBlue.value--;
+        if (array3[0].color === 'blue') {
+            thirdBlueValue.value--;
         }
-        deckThirdStage.shift();
+        array3.shift();
     }
-
-    if (deckFirstStage.length === 0 && deckSecondStage.length === 0 && deckThirdStage.length === 0) {
-        takeCard.classList.add('hide');
-        difficultyBlock.classList.add('hide');
-        card1.classList.remove('fire-border');
-        card2.classList.remove('fire-border');
-        card3.classList.remove('fire-border');
-        card4.classList.remove('fire-border');
-        difficulty.forEach(item => item.classList.remove('fire-border'));
-        music.play();
-    }
-
-})
+});

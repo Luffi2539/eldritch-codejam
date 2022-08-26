@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'Horror';
+    src: url(./assets/Font/ofont.ru_Old\ Horror\ Films.ttf);
+}
+
 body {
     position: relative;
     margin: 0;
     height: 100%;
     overflow: hidden;
+    font-family: 'Horror';
+    font-weight: 400;
 }
 
 .background {
@@ -86,13 +93,13 @@ body {
         align-items: center;
         justify-content: center;
         padding: 100px;
-        transform: scale(0);
+        // transform: scale(0);
         transition-duration: 2s;
     }
 }
 
 .deck-of-cards {
-    transform: scale(0);
+    // transform: scale(0);
     transition-duration: 2s;
     display: flex;
     flex-direction: column;
@@ -113,7 +120,7 @@ body {
         margin-bottom: 10px;
         margin-top: 10px;
         color: white;
-        font-size: 20px;
+        font-size: 30px;
     }
 
     &__quantity {
@@ -124,32 +131,36 @@ body {
 
         input {
             position: relative;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
             text-align: center;
-            font-size: 20px;
+            font-size: 40px;
             color: white;
             pointer-events: none;
             z-index: 2;
+            opacity: .7;
+            border-radius: 10px;
 
             &:not(:last-child) {
-                margin-right: 10px;
+                margin-right: 20px;
             }
         }
     }
 }
 
 .green {
-    background-color: green;
+    background-image: url(./assets/Stages/green.png);
+    &:hover {
+        border: 2px solid linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
+    }
 }
 
 .brown {
-    background-color: brown;
+    background-image: url(./assets/Stages/brown.png);
 }
 
 .blue {
-    background-color: blue;
+    background-image: url(./assets/Stages/blue.png);
 }
 
 .working {
