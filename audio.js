@@ -1,6 +1,5 @@
 const knife = new Audio('./assets/Audio/6802dff441a6d4e (mp3cut.net).mp3');
 const rain = document.querySelector('audio');
-const music = new Audio('./assets/Audio/film-ujasov-kino.mp3');
 const takeCard = document.querySelector(".deck");
 const card1 = document.querySelector('.card1');
 const card2 = document.querySelector('.card2');

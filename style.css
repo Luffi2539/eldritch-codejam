@@ -90,6 +90,7 @@ body {
   margin-bottom: 15px;
 }
 .difficulty-level {
+  position: relative;
   max-width: 30vw;
   background-image: url(./assets/Scroll/scroll.png);
   background-repeat: no-repeat;
@@ -99,10 +100,12 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px;
+  top: -800px;
   transition-duration: 2s;
 }
 
 .deck-of-cards {
+  transform: scale(0);
   transition-duration: 2s;
   display: flex;
   flex-direction: column;
@@ -205,9 +208,19 @@ body {
   transition-duration: 1s;
 }
 
+.none-click {
+  pointer-events: none;
+}
+
+.difficulty-level.show {
+  top: 0px;
+  transition-duration: 4s;
+}
+
 .show {
   transform: scale(1);
-  transition-duration: 2s;
+  opacity: 1;
+  transition-duration: 5s;
 }
 
 .hide {
@@ -218,8 +231,4 @@ body {
 .random-card.show {
   transform: translateX(0px) rotateY(360deg);
   transition-duration: 1s;
-}
-
-.none-click {
-  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */

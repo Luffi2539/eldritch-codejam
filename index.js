@@ -189,6 +189,7 @@ function divisionToCircles(cards, array) {
 };
 
 card1.addEventListener('click', () => {
+    document.querySelector('.difficulty-level').classList.add('show');
     cardsColorValue(0, 2, 2, 1, 3, 0, 3, 4, 0);
     let array = [0, 2, 2, 1, 3, 0, 3, 4, 0];
     veryEasy.addEventListener('click', () => {
@@ -215,6 +216,7 @@ card1.addEventListener('click', () => {
 });
 
 card2.addEventListener('click', () => {
+    document.querySelector('.difficulty-level').classList.add('show');
     cardsColorValue(1, 2, 1, 3, 2, 1, 2, 4, 0);
     let array = [1, 2, 1, 3, 2, 1, 2, 4, 0];
     veryEasy.addEventListener('click', () => {
@@ -240,6 +242,7 @@ card2.addEventListener('click', () => {
 });
 
 card3.addEventListener('click', () => {
+    document.querySelector('.difficulty-level').classList.add('show');
     cardsColorValue(0, 2, 1, 2, 3, 1, 3, 4, 0);
     let array = [0, 2, 1, 2, 3, 1, 3, 4, 0];
     veryEasy.addEventListener('click', () => {
@@ -265,6 +268,7 @@ card3.addEventListener('click', () => {
 });
 
 card4.addEventListener('click', () => {
+    document.querySelector('.difficulty-level').classList.add('show');
     cardsColorValue(1, 2, 1, 2, 3, 1, 2, 4, 0);
     let array = [1, 2, 1, 2, 3, 1, 2, 4, 0];
     veryEasy.addEventListener('click', () => {
@@ -335,5 +339,20 @@ document.querySelector('.deck').addEventListener('click', () => {
             thirdBlueValue.value--;
         }
         array3.shift();
+    }
+    if (thirdGreenValue.value == 0 && thirdBrownValue.value == 0 && thirdBlueValue.value == 0) {
+        function hideBlock() {
+            document.querySelector('.difficulty-level').classList.remove('show');
+            document.querySelector('.deck-of-cards').classList.remove('show');
+        }
+        setTimeout(hideBlock, 5000);
+        cards.forEach(card => {
+            card.classList.remove('fire-border');
+        });
+        
+        difficulty.forEach(item => {
+            item.classList.remove('fire-border');
+        });
+        new Audio('./assets/Audio/film-ujasov-kino.mp3').play();
     }
 });
