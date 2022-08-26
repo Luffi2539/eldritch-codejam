@@ -5,6 +5,7 @@ body {
   margin: 0;
   background-image: url("assets/home.png");
   background-repeat: no-repeat;
+  overflow-y:hidden;
 }
 
 .ancient {
