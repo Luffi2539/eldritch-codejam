@@ -1,0 +1,252 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  margin: 0
+}
+
+code {
+  font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
+}
+
+.ancients-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 40%;
+  padding: 20px
+}
+/*
+.ancients-container .ancient-card {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 260px;
+  width: 200px
+}*/
+.ancients-container .aza,
+.ancients-container .cthul,
+.ancients-container .iog,
+.ancients-container .shub {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 260px;
+  width: 200px
+}
+
+.new-game {
+  width: max-content;
+  padding: 10px;
+  border: solid 1px white;
+  color: white;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/*
+.ancients-container .ancient-card.active {
+  border: 2px solid white
+}*/
+.ancients-container .aza.active,
+.ancients-container .cthul.active,
+.ancients-container .iog.active,
+.ancients-container .shub.active {
+  border: 2px solid white
+}
+
+.difficulty-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  justify-content: center;
+  visibility: hidden;
+}
+/*
+.difficulty-container .difficulty {
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  /*visibility: hidden;
+}*/
+.difficulty-container .just-chill {
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(238, 180, 235, 0.644);
+  /*visibility: hidden;*/
+}
+.difficulty-container .easy {
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(0, 128, 0, 0.6);
+  /*visibility: hidden;*/
+}
+.difficulty-container .normal {
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(255, 166, 0, 0.6);
+  /*visibility: hidden;*/
+}
+.difficulty-container .hard {
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.6);
+  /*visibility: hidden;*/
+}
+.difficulty-container .hell {
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(20, 19, 19, 0.9);
+  /*visibility: hidden;*/
+}
+
+/*
+#easy {
+  background-color: rgba(0, 128, 0, 0.493);
+  opacity: 0.8;
+}
+#normal {
+  background-color: rgba(255, 166, 0, 0.418);
+  opacity: 0.8;
+}
+#hard {
+  background-color: rgba(255, 0, 0, 0.425);
+  opacity: 0.8;
+}
+*/
+/*
+.difficulty-container .difficulty.active {
+  /*background-color: red
+  border: 5px solid white;
+}*/
+.difficulty-container .just-chill.active,
+.difficulty-container .easy.active,
+.difficulty-container .normal.active,
+.difficulty-container .hard.active,
+.difficulty-container .hell.active {
+  border: 5px solid white;
+}
+
+.deck-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  min-width: 30%;
+}
+
+.difficulty-container .shuffle-button {
+  background-color: gray;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  visibility: hidden;
+}
+
+.deck-container .current-state {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 20%;
+  visibility: hidden;
+}
+
+.deck-container .current-state .stage-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px
+}
+
+.deck-container .current-state .stage-container .stage-text {
+  color: white
+}
+
+.deck-container .current-state .stage-container .stage-text.done {
+  color: red;
+  text-decoration: line-through;
+}
+
+.deck-container .current-state .stage-container .dots-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center
+}
+
+.deck-container .current-state .stage-container .dot {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+  color: white;
+}
+
+.deck-container .current-state .stage-container .dot.green {
+  background-color: green
+}
+
+.deck-container .current-state .stage-container .dot.brown {
+  background-color: rgb(128, 121, 24)
+}
+
+.deck-container .current-state .stage-container .dot.blue {
+  background-color: blue
+}
+
+.deck-container .deck {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.deck-container .deck,.deck-container .last-card {
+  background-size: cover;
+  height: 290px;
+  width: 190px;
+  visibility: hidden;
+}
+
+.App {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+  justify-content: space-between;
+  width: 100vw;
+  background-image: url(/assets/home.png);
+}
