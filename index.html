@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Codejam</title>
+  <link href="/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root">
+    <div class="App">
+      <div class="ancients-container">
+        <div id="aza" class="aza" style="background-image: url(/assets/Ancients/Azathoth.png);"></div>
+        <div id="cthul" class="cthul" style="background-image: url(/assets/Ancients/Cthulthu.png);"></div>
+        <div id="iog" class="iog" style="background-image: url(/assets/Ancients/IogSothoth.png);"></div>
+        <div id="shub" class="shub" style="background-image: url(/assets/Ancients/ShubNiggurath.png);"></div>
+        <div class="new-game">New Game</div>
+      </div>
+      <div class="difficulty-container">
+        <div class="just-chill">Just Chill</div>
+        <div class="easy">Easy</div>
+        <div class="normal">Normal</div>
+        <div class="hard">Hard</div>
+        <div class="hell">Hell</div>
+        <span class="shuffle-button">Shuffle deck</span>
+      </div>
+      <div class="deck-container">
+        <div class="current-state">
+          <div class="stage-container"><span id="s1" class="stage-text ">Первая стадия</span>
+            <div class="dots-container">
+              <div class="dot green s1g"></div>
+              <div class="dot brown s1br"></div>
+              <div class="dot blue s1b"></div>
+            </div>
+          </div>
+          <div class="stage-container"><span id="s2" class="stage-text ">Вторая стадия</span>
+            <div class="dots-container">
+              <div class="dot green s2g"></div>
+              <div class="dot brown s2br"></div>
+              <div class="dot blue s2b"></div>
+            </div>
+          </div>
+          <div class="stage-container"><span id="s3" class="stage-text ">Третья стадия</span>
+            <div class="dots-container">
+              <div class="dot green s3g"></div>
+              <div class="dot brown s3br"></div>
+              <div class="dot blue s3b"></div>
+            </div>
+          </div>
+        </div>
+        <div class="deck"
+          style="background-image: url(/assets/mythicCardBackground.png);">
+        </div>
+        <div class="last-card"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
