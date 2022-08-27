@@ -51,20 +51,46 @@ body {
 }
 .ancient-cards {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 35vw;
 }
-.ancient-cards img {
+.ancient-cards .blood {
+  opacity: 0.5;
   position: relative;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 1s;
+}
+.ancient-cards .blood:hover {
+  transform: scale(1.15);
+  transition-duration: 1s;
+  opacity: 1;
+}
+.ancient-cards img.cards {
+  position: relative;
+  margin: 10px;
   border-radius: 30px;
   cursor: pointer;
   transition-duration: 0.2s;
 }
+.ancient-cards img.blood-top {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  width: 230px;
+  border-radius: 30px;
+  z-index: 3;
+  height: 100px;
+}
 
 .difficulty {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   color: white;
   font-size: 20px;
@@ -76,31 +102,30 @@ body {
   cursor: pointer;
   border: 5px solid transparent;
   border-radius: 10px;
-  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
-     border-image: url(/assets/Gif/fire-65.gif) 47%/0/0 stretch;
+}
+.difficulty .blood-top {
+  position: absolute;
+  border-radius: 10px;
+  width: 108%;
+  top: -6px;
+  height: 100px;
 }
 .difficulty:hover {
+  transform: scale(1.1);
   opacity: 1;
   transition-duration: 1s;
-  border: 10px solid transparent;
-  -o-border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
-     border-image: url(/assets/Gif/fire-65.gif) 47%/1/0 stretch;
 }
 .difficulty:not(:last-child) {
   margin-bottom: 15px;
 }
 .difficulty-level {
   position: relative;
-  max-width: 30vw;
-  background-image: url(./assets/Scroll/scroll.png);
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 100px;
-  top: -800px;
+  top: -1000px;
   transition-duration: 2s;
 }
 
@@ -125,7 +150,7 @@ body {
 .stages__title {
   margin-bottom: 10px;
   margin-top: 10px;
-  color: white;
+  color: black;
   font-size: 30px;
 }
 .stages__quantity {
@@ -199,15 +224,6 @@ body {
   transform: translateX(-250px);
 }
 
-.fire-border {
-  border: 10px solid transparent;
-  -o-border-image: url(./assets/Gif/fire-65.gif) 47%/1/0 stretch;
-     border-image: url(./assets/Gif/fire-65.gif) 47%/1/0 stretch;
-  transform: scale(1.1);
-  opacity: 1;
-  transition-duration: 1s;
-}
-
 .none-click {
   pointer-events: none;
 }
@@ -231,4 +247,68 @@ body {
 .random-card.show {
   transform: translateX(0px) rotateY(360deg);
   transition-duration: 1s;
+}
+
+.through {
+  text-decoration: line-through;
+}
+
+@media (max-width: 391px) {
+  .water {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .ancient-cards {
+    max-width: 100%;
+  }
+  .cards {
+    width: 125px;
+    height: 165px;
+    border-radius: 15px;
+  }
+  .ancient-cards img.cards {
+    margin: 10px;
+  }
+  .ancient-cards img.blood-top {
+    width: 124px;
+    top: 9px;
+  }
+  .difficulty-level {
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 0px;
+    padding: 10px;
+  }
+  .difficulty {
+    font-size: 14px;
+  }
+  .difficulty .blood-top {
+    width: 110%;
+  }
+  .deck-of-cards {
+    max-width: 100%;
+    padding: 0px;
+  }
+  .stages__title {
+    font-size: 16px;
+    margin: 0px;
+  }
+  .stages__quantity input {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  .working {
+    align-items: start;
+    padding: 5px;
+  }
+  .inverted-deck .deck {
+    width: 125px;
+    height: 165px;
+  }
+  .random-card {
+    width: 125px;
+    height: 165px;
+  }
 }/*# sourceMappingURL=style.css.map */

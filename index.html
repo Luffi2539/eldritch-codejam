@@ -12,30 +12,55 @@
 </head>
 
 <body>
-    <audio class="rain" src="./assets/Audio/01890.mp3" autoplay loop></audio>
+    <!-- <audio class="rain" src="./assets/Audio/01890.mp3" autoplay loop></audio> -->
     <div class="background">
         <div class="water">
             <section class="ancient-cards">
-                <img class="cards card1" src="./assets/Ancients/Cthulthu.png" width="250" height="330" alt="Cthulthu">
-                <img class="cards card2" src="./assets/Ancients/ShubNiggurath.png" width="250" height="330"
-                    alt="ShubNiggurath">
-                <img class="cards card3" src="./assets/Ancients/IogSothoth.png" width="250" height="330"
-                    alt="IogSothoth">
-                <img class="cards card4" src="./assets/Ancients/Azathoth.png" width="250" height="330" alt="Azathoth">
+                <div class="blood ancients-cards__card1">
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                    <img class="cards card1" src="./assets/Ancients/Cthulthu.png" width="230" height="310"
+                        alt="Cthulthu">
+                </div>
+                <div class="blood ancients-cards__card2">
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                    <img class="cards card2" src="./assets/Ancients/ShubNiggurath.png" width="230" height="310"
+                        alt="ShubNiggurath">
+                </div>
+                <div class="blood ancients-cards__card3">
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                    <img class="cards card3" src="./assets/Ancients/IogSothoth.png" width="230" height="310"
+                        alt="IogSothoth">
+                </div>
+                <div class="blood ancients-cards__card4">
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                    <img class="cards card4" src="./assets/Ancients/Azathoth.png" width="230" height="310"
+                        alt="Azathoth">
+                </div>
+
             </section>
 
             <section class="difficulty-level">
-                <div class="difficulty very-easy">Очень легкий</div>
-                <div class="difficulty easy">Легкий</div>
-                <div class="difficulty normal">Обычный</div>
-                <div class="difficulty hard">Высокий</div>
-                <div class="difficulty very-hard">Очень высокий</div>
+                <div class="difficulty very-easy">Очень легкий
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                </div>
+                <div class="difficulty easy">Легкий
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                </div>
+                <div class="difficulty normal">Обычный
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                </div>
+                <div class="difficulty hard">Высокий
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                </div>
+                <div class="difficulty very-hard">Очень высокий
+                    <img class="blood-top" src="./assets/Blood/blood.gif" alt="blood">
+                </div>
             </section>
 
             <section class="deck-of-cards">
                 <div class="working-stages">
                     <div class="stages">
-                        <div class="stages__title">Первая стадия</div>
+                        <div class="stages__title first-stage">Первая стадия</div>
                         <div class="stages__quantity">
                             <input class="first green first-green" type="text" value="0">
                             <input class="first brown first-brown" type="text" value="0">
@@ -43,7 +68,7 @@
                         </div>
                     </div>
                     <div class="stages">
-                        <div class="stages__title">Вторая стадия</div>
+                        <div class="stages__title second-stage">Вторая стадия</div>
                         <div class="stages__quantity">
                             <input class="second green second-green" type="text" value="0">
                             <input class="second brown second-brown" type="text" value="0">
@@ -51,7 +76,7 @@
                         </div>
                     </div>
                     <div class="stages">
-                        <div class="stages__title">Третья стадия</div>
+                        <div class="stages__title third-stage">Третья стадия</div>
                         <div class="stages__quantity">
                             <input class="third green third-green" type="text" value="0">
                             <input class="third brown third-brown" type="text" value="0">
@@ -61,8 +86,8 @@
                 </div>
                 <div class="working">
                     <div class="inverted-deck">
-                        <img class="deck" src="./assets/mythicCardBackground.png" alt="mythicCardBackground" width="200"
-                            height="280">
+                        <img class="deck" src="./assets/mythicCardBackground.png" alt="mythicCardBackground" width="220"
+                            height="330">
                     </div>
                     <div class="random-card"></div>
                 </div>

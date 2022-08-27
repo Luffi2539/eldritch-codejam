@@ -3,30 +3,28 @@ import cardsDataBrown from './data/mythicCards/brown/indexBrown.js';
 import cardsDataBlue from './data/mythicCards/blue/indexBlue.js';
 
 // ---------------------------------------
-const cards = document.querySelectorAll('.ancient-cards img');
+const cards = document.querySelectorAll('.blood');
 const deck = document.querySelector('.deck-of-cards');
 const difficulty = document.querySelectorAll(".difficulty");
 
 cards.forEach(card => {
     card.addEventListener('click', () => {
-        cards.forEach(card => card.classList.remove('fire-border'));
-        card.classList.add('fire-border');
+        leaveUsedCard(card);
     })
 });
 
 difficulty.forEach(item => {
     item.addEventListener('click', () => {
-        difficulty.forEach(item => item.classList.remove('fire-border'));
-        item.classList.add('fire-border');
+        leaveUsedDifficulty(item);
         deck.classList.add('show');
     })
 });
 
 // ---------------------------------------
-const card1 = document.querySelector('.card1');
-const card2 = document.querySelector('.card2');
-const card3 = document.querySelector('.card3');
-const card4 = document.querySelector('.card4');
+const card1 = document.querySelector('.ancients-cards__card1');
+const card2 = document.querySelector('.ancients-cards__card2');
+const card3 = document.querySelector('.ancients-cards__card3');
+const card4 = document.querySelector('.ancients-cards__card4');
 
 const veryEasy = document.querySelector('.very-easy');
 const easy = document.querySelector('.easy');
@@ -64,21 +62,6 @@ function cardsColorValue(value_1, value_2, value_3, value_4, value_5, value_6, v
     document.querySelector('.third-brown').value = value_8;
     document.querySelector('.third-blue').value = value_9;
     return value_1 + +value_2 + +value_3 + +value_4 + +value_5 + +value_6 + +value_7 + +value_8 + +value_9;
-};
-
-function sumValues(card) {
-    if (card === 'card1') {
-        return cardsColorValue(0, 2, 2, 1, 3, 0, 3, 4, 0);
-    }
-    if (card === 'card2') {
-        return cardsColorValue(1, 2, 1, 3, 2, 1, 2, 4, 0);
-    }
-    if (card === 'card3') {
-        return cardsColorValue(0, 2, 1, 2, 3, 1, 3, 4, 0);
-    }
-    if (card === 'card4') {
-        return cardsColorValue(1, 2, 1, 2, 3, 1, 2, 4, 0);
-    }
 };
 
 let allCards = cardsDataGreen.concat(cardsDataBrown, cardsDataBlue);
@@ -187,6 +170,22 @@ function divisionToCircles(cards, array) {
     array2 = sumValuesCirclesOneStage(green_2, brown_2, blue_2);
     array3 = sumValuesCirclesOneStage(green_3, brown_3, blue_3);
 };
+
+function leaveUsedDifficulty(dif) {
+    difficulty.forEach(item => {
+        item.classList.add('hide');
+    });
+    dif.classList.remove('hide');
+    dif.classList.add('show');
+}
+
+function leaveUsedCard(card) {
+    cards.forEach(item => {
+        item.classList.add('hide');
+    });
+    card.classList.remove('hide');
+    card.classList.add('show');
+}
 
 card1.addEventListener('click', () => {
     document.querySelector('.difficulty-level').classList.add('show');
@@ -316,6 +315,7 @@ document.querySelector('.deck').addEventListener('click', () => {
         }
         array1.shift();
     } else if (array1.length === 0 && array2.length > 0) {
+        document.querySelector('.first-stage').classList.add('through');
         randomCard.style.background = `url(${array2[0].cardFace}) center/cover`;
         if (array2[0].color === 'green') {
             secondGreenValue.value--;
@@ -328,6 +328,7 @@ document.querySelector('.deck').addEventListener('click', () => {
         }
         array2.shift();
     } else if (array2.length === 0 && array3.length > 0) {
+        document.querySelector('.second-stage').classList.add('through');
         randomCard.style.background = `url(${array3[0].cardFace}) center/cover`;
         if (array3[0].color === 'green') {
             thirdGreenValue.value--;
@@ -341,18 +342,17 @@ document.querySelector('.deck').addEventListener('click', () => {
         array3.shift();
     }
     if (thirdGreenValue.value == 0 && thirdBrownValue.value == 0 && thirdBlueValue.value == 0) {
+        document.querySelector('.third-stage').classList.add('through');
+        document.querySelector('.deck').classList.add('hide');
         function hideBlock() {
             document.querySelector('.difficulty-level').classList.remove('show');
             document.querySelector('.deck-of-cards').classList.remove('show');
         }
+        function reloadPage() {
+            location.reload();
+        }
         setTimeout(hideBlock, 5000);
-        cards.forEach(card => {
-            card.classList.remove('fire-border');
-        });
-        
-        difficulty.forEach(item => {
-            item.classList.remove('fire-border');
-        });
+        setTimeout(reloadPage, 10000);
         new Audio('./assets/Audio/film-ujasov-kino.mp3').play();
     }
 });
