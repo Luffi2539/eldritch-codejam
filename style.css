@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+}
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+body {
+    background-image: url("assets/home.png");
+}
+.monsters {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.monsters div {
+    background-size: 100% 100%;
+    width: 240px;
+    height: 310px;
+}
+.monsters div:hover {
+    border: red 2px solid;
+}
+.monsters div.active {
+    border: red 2px solid;
+}
+.Azathoth {
+    background-image: url("assets/Ancients/Azathoth.png");
+}
+.Cthulthu {
+    background-image: url("assets/Ancients/Cthulthu.png");
+}
+.IogSothoth {
+    background-image: url("assets/Ancients/IogSothoth.png");
+}
+.ShubNiggurath {
+    background-image: url("assets/Ancients/ShubNiggurath.png");
+}
+.levels {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.levels div {
+    background-color: #6366f1;
+    border: #6366f1 2px solid;
+    padding: 10px 25px;
+}
+.levels div:hover {
+    border: red 2px solid;
+}
+.levels div.active {
+    border: red 2px solid;
+}
+.wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.round {
+    display: flex;
+    justify-content: space-between;
+}
+.round div {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.green {
+    background-color: #4cae4c;
+}
+.brown {
+    background-color: #8a6d3b;
+}
+.blue {
+    background-color: #008ed6;
+}
+.card-back,
+.card-front {
+    background-image: url("assets/mythicCardBackground.png");
+    border: 1px #00000000 solid;
+    background-size: calc(100% + 1px) calc(100% + 1px);
+    width: 240px;
+    height: 310px;
+}
+.card-back:hover {
+    border: 1px firebrick solid;
+}
+.card-front {
+    background: none;
+    border: 1px grey solid;
+}
