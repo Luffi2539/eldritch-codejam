@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+}
+
+.table {
+  background-image: url("../css/img/ktulhu.jpg");
+  /* background-position: 50%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.ancients-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 40%;
+  padding: 20px;
+}
+
+.ancient-card {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 260px;
+  width: 200px;
+  border-radius: 10%;
+}
+
+.ancient-active {
+  border: 2px solid rgb(172, 227, 235);
+}
+
+
+
+.difficulty-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  justify-content: center;
+}
+
+.difficulty-container .difficulty {
+  border: 2px solid rgb(172, 227, 235);
+  box-sizing: border-box;
+  color: rgb(172, 227, 235);
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+}
+
+.active {
+  background-color: rgb(8, 171, 196);
+}
+
+.deck-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  min-width: 30%;
+}
+
+.current-state {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 30%;
+}
+
+.stage-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stage-text {
+  color: rgb(172, 227, 235);
+}
+
+.dots-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dot {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+.green {
+  background-color: green;
+}
+.brown {
+  background-color: brown;
+}
+.blue {
+  background-color: blue;
+}
+
+
+.last-card {
+  background-size: contain;
+  /* align-self: center; */
+  height: 300px;
+  width: 200px;
+  border: 2px solid rgb(172, 227, 235);
+  border-radius: 10%;
+}
