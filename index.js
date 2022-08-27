@@ -604,6 +604,9 @@ const lastCard = document.querySelector('.last-card');
 function showLastCard () {
   let arr = finalDeck.shift();
   lastCard.style.backgroundImage = `url(${arr.cardFace})`;
+  if (finalDeck.length === 0) {
+    lastCard.style.backgroundImage = `url(../eldritch-codejam/assets/no_card.jpg)`
+  }
 }
 
 lastCard.addEventListener('click', showLastCard)

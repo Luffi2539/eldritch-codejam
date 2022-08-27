@@ -115,8 +115,9 @@ body {
 
 
 .last-card {
-  background-size: cover;
-  height: 40%;
+  background-size: contain;
+  /* align-self: center; */
+  height: 300px;
   width: 200px;
   border: 2px solid rgb(172, 227, 235);
   border-radius: 10%;
