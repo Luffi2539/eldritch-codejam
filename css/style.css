@@ -23,7 +23,20 @@ body {
   padding: 20px;
 }
 
+.ancient-card {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 260px;
+  width: 200px;
+  border-radius: 10%;
+}
 
+.ancient-active {
+  border: 2px solid rgb(172, 227, 235);
+}
 
 
 
@@ -35,9 +48,18 @@ body {
   justify-content: center;
 }
 
+.difficulty-container .difficulty {
+  border: 2px solid rgb(172, 227, 235);
+  box-sizing: border-box;
+  color: rgb(172, 227, 235);
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+}
 
-
-
+.active {
+  background-color: rgb(8, 171, 196);
+}
 
 .deck-container {
   align-items: center;
@@ -46,4 +68,55 @@ body {
   gap: 20px;
   justify-content: center;
   min-width: 30%;
+}
+
+.current-state {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 30%;
+}
+
+.stage-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stage-text {
+  color: rgb(172, 227, 235);
+}
+
+.dots-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dot {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+.green {
+  background-color: green;
+}
+.brown {
+  background-color: brown;
+}
+.blue {
+  background-color: blue;
+}
+
+
+.last-card {
+  background-size: cover;
+  height: 190px;
+  width: 130px;
+  border: 2px solid rgb(172, 227, 235);
 }
