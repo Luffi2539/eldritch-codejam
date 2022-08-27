@@ -1,34 +1,9 @@
-// import ancients from '../eldritch-codejam/assets/Ancients/index.js';
-const ancientsCards = document.querySelector('.ancients-container');
-
-//Ancients
-const azathoth = '../eldritch-codejam/assets/Ancients/Azathoth.png';
-const cthulhu = '../eldritch-codejam/assets/Ancients/Cthulthu.png';
-const iogSothoth = '../eldritch-codejam/assets/Ancients/IogSothoth.png';
-const shubNiggurath = '../eldritch-codejam/assets/Ancients/ShubNiggurath.png';
-
-const ancients = {
-  azathoth,
-  cthulhu,
-  iogSothoth,
-  shubNiggurath
-}
-
-
-function setAncients () {
-  ancientsCards.children[0].style.backgroundImage = `url(${ancients.azathoth})`;
-  ancientsCards.children[1].style.backgroundImage = `url(${ancients.cthulhu})`;
-  ancientsCards.children[2].style.backgroundImage = `url(${ancients.iogSothoth})`;
-  ancientsCards.children[3].style.backgroundImage = `url(${ancients.shubNiggurath})`;
-}
-setAncients ();
-
 //AncientsData
 const ancientsData = [
   {
     id: 'azathoth',
     name: 'azathoth',
-    cardFace: ancients.azathoth,
+    cardFace: '../eldritch-codejam/assets/Ancients/Azathoth.png',
     firstStage: {
       greenCards: 1,
       blueCards: 1,
@@ -48,7 +23,7 @@ const ancientsData = [
   {
     id: 'cthulhu',
     name: 'cthulhu',
-    cardFace: ancients.cthulhu,
+    cardFace: '../eldritch-codejam/assets/Ancients/Cthulthu.png',
     firstStage: {
       greenCards: 0,
       blueCards: 2,
@@ -68,7 +43,7 @@ const ancientsData = [
   {
     id: 'iogSothoth',
     name: 'iogSothoth',
-    cardFace: ancients.iogSothoth,
+    cardFace: '../eldritch-codejam/assets/Ancients/IogSothoth.png',
     firstStage: {
       greenCards: 0,
       blueCards: 1,
@@ -88,7 +63,7 @@ const ancientsData = [
   {
     id: 'shubNiggurath',
     name: 'shubNiggurath',
-    cardFace: ancients.shubNiggurath,
+    cardFace: '../eldritch-codejam/assets/Ancients/ShubNiggurath.png',
     firstStage: {
       greenCards: 1,
       blueCards: 1,
@@ -106,437 +81,333 @@ const ancientsData = [
     },
   },
 ];
-
-//Deck
-const blue1 = '../eldritch-codejam/assets/MythicCards/blue/blue1.png';
-const blue2 = '../eldritch-codejam/assets/MythicCards/blue/blue2.png';
-const blue3 = '../eldritch-codejam/assets/MythicCards/blue/blue3.png';
-const blue4 = '../eldritch-codejam/assets/MythicCards/blue/blue4.png';
-const blue5 = '../eldritch-codejam/assets/MythicCards/blue/blue5.png';
-const blue6 = '../eldritch-codejam/assets/MythicCards/blue/blue6.png';
-const blue7 = '../eldritch-codejam/assets/MythicCards/blue/blue7.png';
-const blue8 = '../eldritch-codejam/assets/MythicCards/blue/blue8.png';
-const blue9 = '../eldritch-codejam/assets/MythicCards/blue/blue9.png';
-const blue10 = '../eldritch-codejam/assets/MythicCards/blue/blue10.png';
-const blue11 = '../eldritch-codejam/assets/MythicCards/blue/blue11.png';
-const blue12 = '../eldritch-codejam/assets/MythicCards/blue/blue12.png';
-
-const blueCardsAssets = {
-  blue1,
-  blue2,
-  blue3,
-  blue4,
-  blue5,
-  blue6,
-  blue7,
-  blue8,
-  blue9,
-  blue10,
-  blue11,
-  blue12,
-};
-
+//Deck data
 const blueCardsData = [
   {
     id: 'blue1',
-    cardFace: blueCardsAssets.blue1,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue1.png',
     difficulty: 'hard',
     color:'blue'
   },
   {
     id: 'blue2',
-    cardFace: blueCardsAssets.blue2,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue2.png',
     difficulty: 'hard',
     color:'blue'
   },
   {
     id: 'blue3',
-    cardFace: blueCardsAssets.blue3,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue3.png',
     difficulty: 'easy',
     color:'blue'
   },
   {
     id: 'blue4',
-    cardFace: blueCardsAssets.blue4,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue4.png',
     difficulty: 'easy',
     color:'blue'
   },
   {
     id: 'blue5',
-    cardFace: blueCardsAssets.blue5,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue5.png',
     difficulty: 'easy',
     color:'blue'
   },
   {
     id: 'blue6',
-    cardFace: blueCardsAssets.blue6,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue6.png',
     difficulty: 'hard',
     color:'blue'
   },
   {
     id: 'blue7',
-    cardFace: blueCardsAssets.blue7,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue7.png',
     difficulty: 'normal',
     color:'blue'
   },
   {
     id: 'blue8',
-    cardFace: blueCardsAssets.blue8,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue8.png',
     difficulty: 'hard',
     color:'blue'
   },
   {
     id: 'blue9',
-    cardFace: blueCardsAssets.blue9,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue9.png',
     difficulty: 'normal',
     color:'blue'
   },
   {
     id: 'blue10',
-    cardFace: blueCardsAssets.blue10,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue10.png',
     difficulty: 'easy',
     color:'blue'
   },
   {
     id: 'blue11',
-    cardFace: blueCardsAssets.blue11,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue11.png',
     difficulty: 'normal',
     color:'blue'
   },
   {
     id: 'blue12',
-    cardFace: blueCardsAssets.blue12,
+    cardFace: '../eldritch-codejam/assets/MythicCards/blue/blue12.png',
     difficulty: 'normal',
     color:'blue'
   },
 ];
 
-const brown1 = '../eldritch-codejam/assets/MythicCards/brown/brown1.png';
-const brown2 = '../eldritch-codejam/assets/MythicCards/brown/brown2.png';
-const brown3 = '../eldritch-codejam/assets/MythicCards/brown/brown3.png';
-const brown4 = '../eldritch-codejam/assets/MythicCards/brown/brown4.png';
-const brown5 = '../eldritch-codejam/assets/MythicCards/brown/brown5.png';
-const brown6 = '../eldritch-codejam/assets/MythicCards/brown/brown6.png';
-const brown7 = '../eldritch-codejam/assets/MythicCards/brown/brown7.png';
-const brown8 = '../eldritch-codejam/assets/MythicCards/brown/brown8.png';
-const brown9 = '../eldritch-codejam/assets/MythicCards/brown/brown9.png';
-const brown10 = '../eldritch-codejam/assets/MythicCards/brown/brown10.png';
-const brown11 = '../eldritch-codejam/assets/MythicCards/brown/brown11.png';
-const brown12 = '../eldritch-codejam/assets/MythicCards/brown/brown12.png';
-const brown13 = '../eldritch-codejam/assets/MythicCards/brown/brown13.png';
-const brown14 = '../eldritch-codejam/assets/MythicCards/brown/brown14.png';
-const brown15 = '../eldritch-codejam/assets/MythicCards/brown/brown15.png';
-const brown16 = '../eldritch-codejam/assets/MythicCards/brown/brown16.png';
-const brown17 = '../eldritch-codejam/assets/MythicCards/brown/brown17.png';
-const brown18 = '../eldritch-codejam/assets/MythicCards/brown/brown18.png';
-const brown19 = '../eldritch-codejam/assets/MythicCards/brown/brown19.png';
-const brown20 = '../eldritch-codejam/assets/MythicCards/brown/brown20.png';
-const brown21 = '../eldritch-codejam/assets/MythicCards/brown/brown21.png';
-
-const brownCardsAssets = {
-  brown1,
-  brown2,
-  brown3,
-  brown4,
-  brown5,
-  brown6,
-  brown7,
-  brown8,
-  brown9,
-  brown10,
-  brown11,
-  brown12,
-  brown13,
-  brown14,
-  brown15,
-  brown16,
-  brown17,
-  brown18,
-  brown19,
-  brown20,
-  brown21,
-};
-
 const brownCardsData = [
   {
     id: 'brown1',
-    cardFace: brownCardsAssets.brown1,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown1.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown2',
-    cardFace: brownCardsAssets.brown2,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown2.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown3',
-    cardFace: brownCardsAssets.brown3,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown3.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown4',
-    cardFace: brownCardsAssets.brown4,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown4.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown5',
-    cardFace: brownCardsAssets.brown5,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown5.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown6',
-    cardFace: brownCardsAssets.brown6,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown6.png',
     difficulty: 'hard',
     color:'brown'
   },
   {
     id: 'brown7',
-    cardFace: brownCardsAssets.brown7,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown7.png',
     difficulty: 'hard',
     color:'brown'
   },
   {
     id: 'brown8',
-    cardFace: brownCardsAssets.brown8,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown8.png',
     difficulty: 'hard',
     color:'brown'
   },
   {
     id: 'brown9',
-    cardFace: brownCardsAssets.brown9,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown9.png',
     difficulty: 'hard',
     color:'brown'
   },
   {
     id: 'brown10',
-    cardFace: brownCardsAssets.brown10,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown10.png',
     difficulty: 'hard',
     color:'brown'
   },
   {
     id: 'brown11',
-    cardFace: brownCardsAssets.brown11,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown11.png',
     difficulty: 'easy',
     color:'brown'
   },
   {
     id: 'brown12',
-    cardFace: brownCardsAssets.brown12,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown12.png',
     difficulty: 'easy',
     color:'brown'
   },
   {
     id: 'brown13',
-    cardFace: brownCardsAssets.brown13,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown13.png',
     difficulty: 'easy',
     color:'brown'
   },
   {
     id: 'brown14',
-    cardFace: brownCardsAssets.brown14,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown14.png',
     difficulty: 'easy',
     color:'brown'
   },
   {
     id: 'brown15',
-    cardFace: brownCardsAssets.brown15,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown15.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown16',
-    cardFace: brownCardsAssets.brown16,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown16.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown17',
-    cardFace: brownCardsAssets.brown17,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown17.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown18',
-    cardFace: brownCardsAssets.brown18,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown18.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown19',
-    cardFace: brownCardsAssets.brown19,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown19.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown20',
-    cardFace: brownCardsAssets.brown20,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown20.png',
     difficulty: 'normal',
     color:'brown'
   },
   {
     id: 'brown21',
-    cardFace: brownCardsAssets.brown21,
+    cardFace: '../eldritch-codejam/assets/MythicCards/brown/brown21.png',
     difficulty: 'easy',
     color:'brown'
   },
 ];
 
-const green1 = '../eldritch-codejam/assets/MythicCards/green/green1.png';
-const green2 = '../eldritch-codejam/assets/MythicCards/green/green2.png';
-const green3 = '../eldritch-codejam/assets/MythicCards/green/green3.png';
-const green4 = '../eldritch-codejam/assets/MythicCards/green/green4.png';
-const green5 = '../eldritch-codejam/assets/MythicCards/green/green5.png';
-const green6 = '../eldritch-codejam/assets/MythicCards/green/green6.png';
-const green7 = '../eldritch-codejam/assets/MythicCards/green/green7.png';
-const green8 = '../eldritch-codejam/assets/MythicCards/green/green8.png';
-const green9 = '../eldritch-codejam/assets/MythicCards/green/green9.png';
-const green10 = '../eldritch-codejam/assets/MythicCards/green/green10.png';
-const green11 = '../eldritch-codejam/assets/MythicCards/green/green11.png';
-const green12 = '../eldritch-codejam/assets/MythicCards/green/green12.png';
-const green13 = '../eldritch-codejam/assets/MythicCards/green/green13.png';
-const green14 = '../eldritch-codejam/assets/MythicCards/green/green14.png';
-const green15 = '../eldritch-codejam/assets/MythicCards/green/green15.png';
-const green16 = '../eldritch-codejam/assets/MythicCards/green/green16.png';
-const green17 = '../eldritch-codejam/assets/MythicCards/green/green17.png';
-const green18 = '../eldritch-codejam/assets/MythicCards/green/green18.png';
-
-const greenCardsAssets = {
-  green1,
-  green2,
-  green3,
-  green4,
-  green5,
-  green6,
-  green7,
-  green8,
-  green9,
-  green10,
-  green11,
-  green12,
-  green13,
-  green14,
-  green15,
-  green16,
-  green17,
-  green18,
-};
-
 const greenCardsData = [
   {
     id: 'green1',
-    cardFace: greenCardsAssets.green1,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green1.png',
     difficulty: 'easy',
     color:'green'
   },
   {
     id: 'green2',
-    cardFace: greenCardsAssets.green2,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green2.png',
     difficulty: 'hard',
     color:'green'
   },
   {
     id: 'green3',
-    cardFace: greenCardsAssets.green3,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green3.png',
     difficulty: 'hard',
     color:'green'
   },
   {
     id: 'green4',
-    cardFace: greenCardsAssets.green4,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green4.png',
     difficulty: 'hard',
     color:'green'
   },
   {
     id: 'green5',
-    cardFace: greenCardsAssets.green5,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green5.png',
     difficulty: 'hard',
     color:'green'
   },
   {
     id: 'green6',
-    cardFace: greenCardsAssets.green6,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green6.png',
     difficulty: 'hard',
     color:'green'
   },
   {
     id: 'green7',
-    cardFace: greenCardsAssets.green7,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green7.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green8',
-    cardFace: greenCardsAssets.green8,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green8.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green9',
-    cardFace: greenCardsAssets.green9,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green9.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green10',
-    cardFace: greenCardsAssets.green10,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green10.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green11',
-    cardFace: greenCardsAssets.green11,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green11.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green12',
-    cardFace: greenCardsAssets.green12,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green12.png',
     difficulty: 'easy',
     color:'green'
   },
   {
     id: 'green13',
-    cardFace: greenCardsAssets.green13,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green13.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green14',
-    cardFace: greenCardsAssets.green14,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green14.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green15',
-    cardFace: greenCardsAssets.green15,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green15.png',
     difficulty: 'normal',
     color:'green'
   },
   {
     id: 'green16',
-    cardFace: greenCardsAssets.green16,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green16.png',
     difficulty: 'easy',
     color:'green'
   },
   {
     id: 'green17',
-    cardFace: greenCardsAssets.green17,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green17.png',
     difficulty: 'easy',
     color:'green'
   },
   {
     id: 'green18',
-    cardFace: greenCardsAssets.green18,
+    cardFace: '../eldritch-codejam/assets/MythicCards/green/green18.png',
     difficulty: 'easy',
     color:'green'
   },
 ];
+//
+//Set img ancients
+const ancientsCards = document.querySelector('.ancients-container');
 
+function setAncients () {
+  ancientsCards.children[0].style.backgroundImage = `url(${ancientsData[0].cardFace})`;
+  ancientsCards.children[1].style.backgroundImage = `url(${ancientsData[1].cardFace})`;
+  ancientsCards.children[2].style.backgroundImage = `url(${ancientsData[2].cardFace})`;
+  ancientsCards.children[3].style.backgroundImage = `url(${ancientsData[3].cardFace})`;
+}
+setAncients ();
+//
 // Summ cards
 let sumGreenCards;
 let sumBlueCards;
@@ -561,6 +432,7 @@ function selectAzathoth() {
   selectOfCthulhu.classList.remove('ancient-active');
   selectOfIogSothoth.classList.remove('ancient-active');
   selectOfShubNiggurath.classList.remove('ancient-active');
+  
   ancient = ancientsData[0];
   sumCard(ancient);
   return ancient;
@@ -720,10 +592,9 @@ function collectDeck () {
   shuffle(ar2);
   let ar3 = arr3.flat(2);
   shuffle(ar3);
-  // console.log(ar1, ar2, ar3);
+  lastCard.style.backgroundImage = `url(../eldritch-codejam/assets/mythicCardBackground.png)`;
   return finalDeck = ar1.concat(ar2, ar3);
 }
-
 
 shuffleDeck.addEventListener('click', collectDeck);
 //
@@ -731,14 +602,12 @@ shuffleDeck.addEventListener('click', collectDeck);
 const lastCard = document.querySelector('.last-card');
 
 function showLastCard () {
-  console.log('final',finalDeck);
   let arr = finalDeck.shift();
-  
-  console.log('arr', arr);
   lastCard.style.backgroundImage = `url(${arr.cardFace})`;
 }
 
 lastCard.addEventListener('click', showLastCard)
+//
 //Shuffle
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
