@@ -1,5 +1,5 @@
 
-const greenCards = {
+const greenCards =  {
   green1:'./assets/MythicCards/green/green1.png',
   green2:'./assets/MythicCards/green/green2.png',
   green3:'./assets/MythicCards/green/green3.png',
@@ -18,6 +18,7 @@ const greenCards = {
   green16:'./assets/MythicCards/green/green16.png',
   green17:'./assets/MythicCards/green/green17.png',
   green18:'./assets/MythicCards/green/green18.png',
-};
+  }
+;
 
 export default greenCards;

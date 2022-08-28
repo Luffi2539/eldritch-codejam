@@ -12,21 +12,22 @@ body {
   display: flex;
   width: 40%;
   height: 100vh;
-  border: 1px solid white;
+
 }
 
-.cthulthu {
+.aza {
   display: flex;
-  background-image: url("assets/Ancients/Cthulthu.png");
-  height: 68%;
-  width: 55%;
+  background-image: url("assets/Ancients/Aza.jpg");
+  height:270px;
+  width: 210px;
   background-size: contain;
   border-radius: 10px;
   background-repeat: no-repeat;
-
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
-.cthulthu:hover {
+.aza:hover {
   cursor: pointer;
  }
 
@@ -37,7 +38,7 @@ body {
     align-items: center;
     width: 20%;
     height: 100vh;
-    border: 1px solid white;
+  
 }
 
 .hardness {
@@ -112,7 +113,6 @@ align-items: center;
   align-items: center;
   width: 40%;
   height: 100vh;
-  border: 1px solid white;
 }
 
 .shuffle_deck{
@@ -135,8 +135,8 @@ align-items: center;
     display: flex;
     background-position: center;
     background-image: url("assets/card.jpg");
-    height: 25%;
-    width: 30%;
+    height: 200px;
+    width: 160px;
     background-repeat: no-repeat;
     margin-top: 80px;
     border-radius: 20px;
@@ -150,8 +150,8 @@ align-items: center;
 .card.activ{
   display: flex;
   margin-top: 20px;
-  height: 25%;
-  width: 30%;
+  height: 200px;
+    width: 160px;
   background-image: url("assets/card.jpg");
   background-position: center;
   background-repeat: no-repeat;
