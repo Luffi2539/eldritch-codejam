@@ -17,7 +17,7 @@ function playAudio(item, audio, volume) {
 difficulty.forEach(item => {
     item.addEventListener("click", () => {
         knife.play();
-        knife.volume = .1;
+        knife.volume = .5;
     });
 });
 

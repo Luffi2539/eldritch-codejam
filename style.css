@@ -216,8 +216,8 @@ body {
 .random-card {
   position: relative;
   z-index: 1;
-  width: 200px;
-  height: 280px;
+  width: 210px;
+  height: 320px;
   border-radius: 30px;
   opacity: 0.8;
   transition-duration: 0.5s;
