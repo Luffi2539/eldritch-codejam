@@ -47,7 +47,7 @@ azathoth.addEventListener('click', () => {
     shubNiggurath.classList.remove('active-card');
 });
 
-IogSothoth.addEventListener('click', () => {
+/*IogSothoth.addEventListener('click', () => {
     activateNormal ();
     IogSothoth.classList.toggle('active-card');
     azathoth.classList.remove('active-card');
@@ -70,6 +70,7 @@ shubNiggurath.addEventListener('click', () => {
     IogSothoth.classList.remove('active-card');
     cthulthu.classList.remove('active-card');
 });
+*/
 
 /********** Activate difficulty **********/
 
@@ -286,27 +287,25 @@ function  colorBg () {
     return  color = arrColor[randomNum]; 
 }
 }
-colorBg ();
-console.log(color);
-
-
-
 
 let colorNumBg = '';
 function colorNum () {
     if (color  === 'green') {
         let randomNum = getRandomInt (0, 0);
+        firstStage.children[1].children[0].textContent = ancientsData[0].firstStage.greenCards - 1;
         return colorNumBg = firstStageGreen[randomNum];
+        
     } else if (color  === 'brown') {
         let randomNum = getRandomInt (0, 1);
+        firstStage.children[1].children[1].textContent = ancientsData[0].firstStage.brownCards - 1;
         return colorNumBg = firstStageBrown[randomNum];
     } else if (color  === 'blue') {
         let randomNum = getRandomInt (0, 0);
+        firstStage.children[1].children[2].textContent = ancientsData[0].firstStage.blueCards - 1;
         return colorNumBg =  firstStageBlue[randomNum];
     }
 }
-colorNum ();
-console.log(colorNum ());
+
 
 
 
