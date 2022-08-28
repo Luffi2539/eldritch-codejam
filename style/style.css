@@ -1,0 +1,186 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height:100%;
+    background-image : url('/eldritch-codejam/assets/home.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
+    padding:0;
+}
+
+header {
+    height:50vh;
+}
+
+main {
+    height:47vh;
+}
+
+footer {
+    text-align: center;
+    height:1vh;
+    color:white;
+}
+
+.ancitents {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height:100%;
+}
+
+.ancitents__item {
+    height:100%;
+    width:24%;
+}
+.ancitents__item-1 {
+    background-image: url('../assets/Ancients/Azathoth.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+.ancitents__item-2 {
+    background-image: url('../assets/Ancients/Cthulthu.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+.ancitents__item-3 {
+    background-image: url('../assets/Ancients/IogSothoth.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+.ancitents__item-4 {
+    background-image: url('../assets/Ancients/ShubNiggurath.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.main {
+    display: flex;
+
+}
+.count-steps {
+    flex:1;
+}
+
+.steps-block{
+    display: flex;
+    flex-direction: column;
+    color:white;
+}
+.steps-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.steps-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.steps-3 {
+    display: flex;
+    justify-content: center;
+}
+.step {
+    padding:20px 10px;
+}
+
+.step_leg {
+    margin:10px 20px;
+    line-height: 30px;
+}
+.steps-1__green {
+    border:1px solid black;
+    background:green;
+    padding:5px 10px;
+
+}
+.steps-1__brown {
+    border:1px solid black;
+    background:brown;
+    padding:5px 10px;
+}
+.steps-1__blue {
+    border:1px solid black;
+    background:blue;
+    padding:5px 10px;
+}
+
+.steps-2__green {
+    border:1px solid black;
+    background:green;
+    padding:5px 10px;
+
+}
+.steps-2__brown {
+    border:1px solid black;
+    background:brown;
+    padding:5px 10px;
+}
+.steps-2__blue {
+    border:1px solid black;
+    background:blue;
+    padding:5px 10px;
+}
+
+.steps-3__green {
+    border:1px solid black;
+    background:green;
+    padding:5px 10px;
+
+}
+.steps-3__brown {
+    border:1px solid black;
+    background:brown;
+    padding:5px 10px;
+}
+.steps-3__blue {
+    border:1px solid black;
+    background:blue;
+    padding:5px 10px;
+}
+.steps-2 {
+
+}
+.steps-3 {
+
+}
+.main-card {
+    flex:1;
+    display: flex;
+    
+}
+
+.main-card img {
+    margin: auto auto;
+    width:50%;
+}
+.shird-card {
+
+}
+.main-card__bg{
+}
+
+.count-card{
+  width:300px;
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+.restart__button {
+
+}
+.restart {
+    cursor: pointer;
+}
