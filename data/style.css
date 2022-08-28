@@ -1,0 +1,95 @@
+body {
+    background: url(../assets/home.png);
+}
+
+main {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img-button{
+    width: 150px;
+    height: 200px;
+}
+
+.img-button:hover {
+    cursor: pointer;
+}
+
+.levels {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.levels button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: antiquewhite;
+}
+
+.levels button:hover {
+    cursor: pointer;
+    background-color: greenyellow;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-button {
+    visibility: hidden;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: khaki;
+}
+
+.result-button:hover {
+    cursor: pointer;
+    background-color: greenyellow;
+}
+
+.result-img {
+    visibility: hidden;
+    width: 150px;
+    height: 200px;
+}
+
+.result-img:hover {
+    cursor: pointer;
+}
+
+.images {
+    visibility: hidden;
+    position: relative;
+}
+
+.images img {
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    right: 0;
+}
