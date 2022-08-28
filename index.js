@@ -93,13 +93,119 @@ mixUp.addEventListener('click', () => {
     mixUp.classList.toggle('visibility-hidden');
     stages.classList.toggle('active-info');
     deckCard.classList.toggle('active-info');
+  
 });
+
 
 /*deckCard.addEventListener('click', () => {
     currentCard.style.backgroundImage = "url('./assets/MythicCards/blue/blue1.png')";
 });*/
 
 /********** Active stage dots  **********/
+
+
+
+
+/********** Mythic cards activate azathoth **********/
+
+let cardsGreenAll = [];
+let cardsBrownAll = [];
+let cardsBlueAll =[];
+
+let firstStageGreen = [];
+let firstStageBrown = [];
+let firstStageBlue = [];
+
+let secondStageGreen = [];
+let secondStageBrown = [];
+let secondStageBlue = [];
+
+let thirdStageGreen = [];
+let thirdStageBrown = [];
+let thirdStageBlue = [];
+
+const greenCardsLength = Object.keys(greenCardsAssets).length;
+const brownCardsLength = Object.keys(brownCardsAssets).length;
+const blueCardsLength = Object.keys(blueCardsAssets).length;
+
+
+let allStageGreenAzathoth = ancientsData[0].firstStage.greenCards + ancientsData[0].secondStage.greenCards + ancientsData[0].thirdStage.greenCards;
+let allStageBrownAzathoth = ancientsData[0].firstStage.brownCards + ancientsData[0].secondStage.brownCards + ancientsData[0].thirdStage.brownCards;
+let allStageBlueAzathoth = ancientsData[0].firstStage.blueCards + ancientsData[0].secondStage.blueCards + ancientsData[0].thirdStage.blueCards;
+
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function allStageColorAzathoth () {
+    for (let i = 0; i < allStageGreenAzathoth; i++) {
+        let randomNum = getRandomInt(0, 18);
+        cardsGreenAll.push(Object.keys(greenCardsAssets)[randomNum]);
+    }
+    for (let i = 0; i < allStageBrownAzathoth; i++) {
+        let randomNum = getRandomInt(0, 21);
+        cardsBrownAll.push(Object.keys(brownCardsAssets)[randomNum]);
+    }
+    for (let i = 0; i < allStageBlueAzathoth; i++) {
+        let randomNum = getRandomInt(0, 12);
+        cardsBlueAll.push(Object.keys(blueCardsAssets)[randomNum]);
+    }
+}
+allStageColorAzathoth ();
+
+
+function firstStageAzathoth () {
+    for (let i = 0; i < ancientsData[0].firstStage.greenCards; i++) {
+        let randomNum = getRandomInt(0, 5);
+        firstStageGreen.push(cardsGreenAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].firstStage.brownCards; i++) {
+        let randomNum = getRandomInt(0, 9);
+        firstStageBrown.push(cardsBrownAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].firstStage.blueCards; i++) {
+        let randomNum = getRandomInt(0, 2);
+        firstStageBlue.push(cardsBlueAll[randomNum]);
+    }
+}
+firstStageAzathoth ();
+
+
+function secondStageAzathoth () {
+    for (let i = 0; i < ancientsData[0].secondStage.greenCards; i++) {
+        let randomNum = getRandomInt(0, 5);
+        secondStageGreen.push(cardsGreenAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].secondStage.brownCards; i++) {
+        let randomNum = getRandomInt(0, 9);
+        secondStageBrown.push(cardsBrownAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].secondStage.blueCards; i++) {
+        let randomNum = getRandomInt(0, 2);
+        secondStageBlue.push(cardsBlueAll[randomNum]);
+    }
+}
+secondStageAzathoth ();
+
+
+function thirdStageAzathoth () {
+    for (let i = 0; i < ancientsData[0].thirdStage.greenCards; i++) {
+        let randomNum = getRandomInt(0, 5);
+        thirdStageGreen.push(cardsGreenAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].thirdStage.brownCards; i++) {
+        let randomNum = getRandomInt(0, 9);
+        thirdStageBrown.push(cardsBrownAll[randomNum]);
+    }
+    for (let i = 0; i < ancientsData[0].thirdStage.blueCards; i++) {
+        let randomNum = getRandomInt(0, 2);
+        thirdStageBlue.push(cardsBlueAll[randomNum]);
+    }
+}
+thirdStageAzathoth ();
 
 mixUp.addEventListener('click', () => {
     
@@ -172,114 +278,48 @@ mixUp.addEventListener('click', () => {
     }
 });
 
+let arrColor = ['green', 'brown', 'blue'];
+let color = '';
+function  colorBg () {
+    if (arrColor.length > 0) {
+    let randomNum =  getRandomInt (0, 3);
+    return  color = arrColor[randomNum]; 
+}
+}
+colorBg ();
+console.log(color);
 
-/********** Mythic cards activate azathoth **********/
+
+
+
+let colorNumBg = '';
+function colorNum () {
+    if (color  === 'green') {
+        let randomNum = getRandomInt (0, 0);
+        return colorNumBg = firstStageGreen[randomNum];
+    } else if (color  === 'brown') {
+        let randomNum = getRandomInt (0, 1);
+        return colorNumBg = firstStageBrown[randomNum];
+    } else if (color  === 'blue') {
+        let randomNum = getRandomInt (0, 0);
+        return colorNumBg =  firstStageBlue[randomNum];
+    }
+}
+colorNum ();
+console.log(colorNum ());
+
+
 
 deckCard.addEventListener('click', () => {
-    currentCardBg ();
+    colorBg ();
+    colorNum();
+    currentCard.style.backgroundImage = `url('./assets/MythicCards/${color}/${colorNumBg}.png')`; 
 });
 
-function currentCardBg () {
-   currentCard.style.backgroundImage = `url('./assets/MythicCards/${color}/${colorNum}.png')`;
-}
-
-let cardsGreenAll = [];
-let cardsBrownAll = [];
-let cardsBlueAll =[];
-
-let firstStageGreen = [];
-let firstStageBrown = [];
-let firstStageBlue = [];
-
-let secondStageGreen = [];
-let secondStageBrown = [];
-let secondStageBlue = [];
-
-let thirdStageGreen = [];
-let thirdStageBrown = [];
-let thirdStageBlue = [];
-
-const greenCardsLength = Object.keys(greenCardsAssets).length;
-const brownCardsLength = Object.keys(brownCardsAssets).length;
-const blueCardsLength = Object.keys(blueCardsAssets).length;
 
 
-let allStageGreenAzathoth = ancientsData[0].firstStage.greenCards + ancientsData[0].secondStage.greenCards + ancientsData[0].thirdStage.greenCards;
-let allStageBrownAzathoth = ancientsData[0].firstStage.brownCards + ancientsData[0].secondStage.brownCards + ancientsData[0].thirdStage.brownCards;
-let allStageBlueAzathoth = ancientsData[0].firstStage.blueCards + ancientsData[0].secondStage.blueCards + ancientsData[0].thirdStage.blueCards;
 
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function allStageColorAzathoth () {
-    for (let i = 0; i < allStageGreenAzathoth; i++) {
-        let randomNum = getRandomInt(0, 18);
-        cardsGreenAll.push(Object.keys(greenCardsAssets)[randomNum]);
-    }
-    for (let i = 0; i < allStageBrownAzathoth; i++) {
-        let randomNum = getRandomInt(0, 21);
-        cardsBrownAll.push(Object.keys(brownCardsAssets)[randomNum]);
-    }
-    for (let i = 0; i < allStageBlueAzathoth; i++) {
-        let randomNum = getRandomInt(0, 12);
-        cardsBlueAll.push(Object.keys(blueCardsAssets)[randomNum]);
-    }
-}
-allStageColorAzathoth ();
-
-function firstStageAzathoth () {
-    for (let i = 0; i < ancientsData[0].firstStage.greenCards; i++) {
-        let randomNum = getRandomInt(0, 5);
-        firstStageGreen.push(cardsGreenAll[randomNum]);
-    }
-    for (let i = 0; i < ancientsData[0].firstStage.brownCards; i++) {
-        let randomNum = getRandomInt(0, 9);
-        firstStageBrown.push(cardsBrownAll[randomNum]);
-    }
-    for (let i = 0; i < ancientsData[0].firstStage.blueCards; i++) {
-        let randomNum = getRandomInt(0, 2);
-        firstStageBlue.push(cardsBlueAll[randomNum]);
-    }
-}
-firstStageAzathoth ();
-
-function secondStageAzathoth () {
-    for (let i = 0; i < ancientsData[0].secondStage.greenCards; i++) {
-        let randomNum = getRandomInt(0, 5);
-        secondStageGreen.push(cardsGreenAll[randomNum]);
-    }
-    for (let i = 0; i < ancientsData[0].secondStage.brownCards; i++) {
-        let randomNum = getRandomInt(0, 9);
-        secondStageBrown.push(cardsBrownAll[randomNum]);
-    }
-    for (let i = 0; i < ancientsData[0].secondStage.blueCards; i++) {
-        let randomNum = getRandomInt(0, 2);
-        secondStageBlue.push(cardsBlueAll[randomNum]);
-    }
-}
-secondStageAzathoth ();
-
-function thirdStageAzathoth () {
-    for (let i = 0; i < ancientsData[0].thirdStage.greenCards; i++) {
-        let randomNum = getRandomInt(0, 5);
-        thirdStageGreen.push(cardsGreenAll[randomNum]);
-    }
-    for (let i = 0; i < ancientsData[0].thirdStage.brownCards; i++) {
-        let randomNum = getRandomInt(0, 9);
-        thirdStageBrown.push(cardsBrownAll[randomNum]);
-    }
-    for (let i = 0; i < ancientsData[0].thirdStage.blueCards; i++) {
-        let randomNum = getRandomInt(0, 2);
-        thirdStageBlue.push(cardsBlueAll[randomNum]);
-    }
-}
-thirdStageAzathoth ();
-
-console.log(firstStageGreen);
+/*console.log(firstStageGreen);
 console.log(firstStageBrown);
 console.log(firstStageBlue);
 
@@ -297,7 +337,7 @@ console.log(thirdStageBlue);
 
 console.log(cardsGreenAll);
 console.log(cardsBrownAll);
-console.log(cardsBlueAll);
+console.log(cardsBlueAll);*/
 
 
 
