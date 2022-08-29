@@ -11,7 +11,7 @@ import greenCardsData from "./data/mythicCards/green/index.js";
 
 // // Объявление переменных
 
-const ancient1 = document.querySelector(".aza");
+const ancient = document.querySelector(".aza");
 const hardness = document.querySelector(".hardness");
 const stack = document.querySelector(".stack");
 const normal = document.querySelector(".normal");
@@ -22,7 +22,7 @@ const randomCardPlay= document.querySelector(".random-card");
 
 // // Листенеры
 
-ancient1.addEventListener("click", hardnessChoise);
+ancient.addEventListener("click", hardnessChoise);
 normal.addEventListener("click", shuffleButton2);
 shuffleDeck.addEventListener("click", Deck);
 deck.addEventListener("click", randomCardFunc);
@@ -38,9 +38,7 @@ function hardnessChoise() {
 function shuffleButton2() {
   shuffleDeck.classList.add("activ");
   deck.classList.remove("activ");
-  easy.classList.remove("activ");
-  hard.classList.remove("activ");
-  normal.classList.add("activ");
+   normal.classList.add("activ");
   randomCardShow.classList.remove("activ");
 }
 

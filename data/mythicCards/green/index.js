@@ -105,7 +105,8 @@ const greenCardsData = [
     cardFace: "./assets/MythicCards/green/green18.png",
     difficulty: "easy",
     color: "green",
-  },
-];
-
+  }
+]
+    
 export default greenCardsData;
+

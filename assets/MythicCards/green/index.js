@@ -19,6 +19,6 @@ const greenCards =  {
   green17:'./assets/MythicCards/green/green17.png',
   green18:'./assets/MythicCards/green/green18.png',
   }
-;
 
-export default greenCards;
+
+export default greenCards
