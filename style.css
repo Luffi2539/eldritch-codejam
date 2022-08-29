@@ -115,6 +115,44 @@ align-items: center;
   height: 100vh;
 }
 
+.stages{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span{
+    display: block;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.dots{
+  display: flex;
+    margin-bottom: 15px;
+}
+.dot {
+  display: flex;
+  width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.green {
+    background-color: green;
+}
+.brown{
+  background-color: #8B4513;
+}
+.blue {
+  background-color: blue;
+}
+
+
 .shuffle_deck{
     display: none;
 }
@@ -138,7 +176,7 @@ align-items: center;
     height: 200px;
     width: 160px;
     background-repeat: no-repeat;
-    margin-top: 80px;
+    /* margin-top: 20px; */
     border-radius: 20px;
     
 }
@@ -152,10 +190,13 @@ align-items: center;
   margin-top: 20px;
   height: 200px;
     width: 160px;
-  background-image: url("assets/card.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
   border-radius: 20px;
+}
+
+.random-card{
+  height: 190px;
+  width: 120px;
+  margin-left: 20px;
 }
 
 .card {
