@@ -12,6 +12,7 @@ body {
   display: flex;
   width: 40%;
   height: 100vh;
+  flex-wrap: wrap;
 
 }
 
@@ -31,6 +32,7 @@ body {
   cursor: pointer;
  }
 
+
 .hardness-choise{
     display: flex;
     justify-content: center;
@@ -38,8 +40,7 @@ body {
     align-items: center;
     width: 20%;
     height: 100vh;
-  
-}
+  }
 
 .hardness {
   display: none;
@@ -50,21 +51,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-}
-
-.easy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 76px;
-  height: 35px;
-  border: 1px solid green;
-  color: white;
-  border-radius: 10px;
-}
-
-.easy.activ{
-  background-color: blue;
 }
 
 .normal {
@@ -83,25 +69,7 @@ align-items: center;
   background-color: blue;
 }
 
-.hard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 76px;
-  height: 35px;
-  border: 1px solid red;
-  margin-top: 40px;
-  color: white;
-  border-radius: 10px;
-}
-
-.hard.activ{
-  background-color: blue;
-}
-
-.easy,
 .normal,
-.hard,
 .shuffle_deck:hover {
   cursor: pointer;
 }
@@ -114,6 +82,44 @@ align-items: center;
   width: 40%;
   height: 100vh;
 }
+
+.stages{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span{
+    display: block;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.dots{
+  display: flex;
+    margin-bottom: 15px;
+}
+.dot {
+  display: flex;
+  width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.green {
+    background-color: green;
+}
+.brown{
+  background-color: #8B4513;
+}
+.blue {
+  background-color: blue;
+}
+
 
 .shuffle_deck{
     display: none;
@@ -138,7 +144,7 @@ align-items: center;
     height: 200px;
     width: 160px;
     background-repeat: no-repeat;
-    margin-top: 80px;
+    /* margin-top: 20px; */
     border-radius: 20px;
     
 }
@@ -152,10 +158,13 @@ align-items: center;
   margin-top: 20px;
   height: 200px;
     width: 160px;
-  background-image: url("assets/card.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
   border-radius: 20px;
+}
+
+.random-card{
+  height: 190px;
+  width: 120px;
+  margin-left: 20px;
 }
 
 .card {
