@@ -1,0 +1,167 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-image: url("assets/home.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ancient {
+  display: flex;
+  width: 40%;
+  height: 100vh;
+
+}
+
+.aza {
+  display: flex;
+  background-image: url("assets/Ancients/Aza.jpg");
+  height:270px;
+  width: 210px;
+  background-size: contain;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.aza:hover {
+  cursor: pointer;
+ }
+
+.hardness-choise{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 100vh;
+  
+}
+
+.hardness {
+  display: none;
+}
+
+.hardness.activ {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.easy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 76px;
+  height: 35px;
+  border: 1px solid green;
+  color: white;
+  border-radius: 10px;
+}
+
+.easy.activ{
+  background-color: blue;
+}
+
+.normal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 76px;
+  height: 35px;
+  border: 1px solid yellow;
+  margin-top: 40px;
+  color: white;
+  border-radius: 10px;
+}
+
+.normal.activ{
+  background-color: blue;
+}
+
+.hard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 76px;
+  height: 35px;
+  border: 1px solid red;
+  margin-top: 40px;
+  color: white;
+  border-radius: 10px;
+}
+
+.hard.activ{
+  background-color: blue;
+}
+
+.easy,
+.normal,
+.hard,
+.shuffle_deck:hover {
+  cursor: pointer;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100vh;
+}
+
+.shuffle_deck{
+    display: none;
+}
+
+.shuffle_deck.activ{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 35px;
+  border: 1px solid;
+  margin-top: 40px;
+  color: white;
+  border-radius: 10px;
+}
+
+.deck.activ{
+    display: flex;
+    background-position: center;
+    background-image: url("assets/card.jpg");
+    height: 200px;
+    width: 160px;
+    background-repeat: no-repeat;
+    margin-top: 80px;
+    border-radius: 20px;
+    
+}
+
+.deck{
+    display: none;
+}
+
+.card.activ{
+  display: flex;
+  margin-top: 20px;
+  height: 200px;
+    width: 160px;
+  background-image: url("assets/card.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.card {
+  display: none;
+}
+
+.deck.activ, .card.activ:hover{
+  cursor: pointer;
+}
