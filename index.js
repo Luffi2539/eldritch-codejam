@@ -401,10 +401,9 @@ const greenCardsData = [
 const ancientsCards = document.querySelector('.ancients-container');
 
 function setAncients () {
-  ancientsCards.children[0].style.backgroundImage = `url(${ancientsData[0].cardFace})`;
-  ancientsCards.children[1].style.backgroundImage = `url(${ancientsData[1].cardFace})`;
-  ancientsCards.children[2].style.backgroundImage = `url(${ancientsData[2].cardFace})`;
-  ancientsCards.children[3].style.backgroundImage = `url(${ancientsData[3].cardFace})`;
+  for (let i = 0; i < ancientsData.length; i++) {
+    ancientsCards.children[i].style.backgroundImage = `url(${ancientsData[i].cardFace})`;
+  }
 }
 setAncients ();
 //
@@ -555,62 +554,86 @@ const fc9 = document.querySelector('.f9')
 let finalDeck =[];
 
 function collectFirstStage() {
-  let greenFirst = ancient.firstStage.greenCards;
-  let blueFirst = ancient.firstStage.blueCards;
-  let brownFirst = ancient.firstStage.brownCards;
-  return [newDeck[0].splice(0, greenFirst), newDeck[1].splice(0, blueFirst), newDeck[2].splice(0, brownFirst)];
+  let greenCardsNumber = ancient.firstStage.greenCards;
+  let blueCardsNumber = ancient.firstStage.blueCards;
+  let brownCardNumber = ancient.firstStage.brownCards;
+  return [newDeck[0].splice(0, greenCardsNumber), newDeck[1].splice(0, blueCardsNumber), newDeck[2].splice(0, brownCardNumber)];
 }
 function collectSecondStage() {
-  let greenFirst = ancient.secondStage.greenCards;
-  let blueFirst = ancient.secondStage.blueCards;
-  let brownFirst = ancient.secondStage.brownCards;
-  return [newDeck[0].splice(0, greenFirst), newDeck[1].splice(0, blueFirst), newDeck[2].splice(0, brownFirst)];
+  let greenCardsNumber = ancient.secondStage.greenCards;
+  let blueCardsNumber = ancient.secondStage.blueCards;
+  let brownCardNumber = ancient.secondStage.brownCards;
+  return [newDeck[0].splice(0, greenCardsNumber), newDeck[1].splice(0, blueCardsNumber), newDeck[2].splice(0, brownCardNumber)];
 }
 function collectThirdStage() {
-  let greenFirst = ancient.thirdStage.greenCards;
-  let blueFirst = ancient.thirdStage.blueCards;
-  let brownFirst = ancient.thirdStage.brownCards;
-  return [newDeck[0].splice(0, greenFirst), newDeck[1].splice(0, blueFirst), newDeck[2].splice(0, brownFirst)];
+  let greenCardsNumber = ancient.thirdStage.greenCards;
+  let blueCardsNumber = ancient.thirdStage.blueCards;
+  let brownCardNumber = ancient.thirdStage.brownCards;
+  return [newDeck[0].splice(0, greenCardsNumber), newDeck[1].splice(0, blueCardsNumber), newDeck[2].splice(0, brownCardNumber)];
 }
 
+let arrFirstStage = [];
+let arrSecondStage = [];
+let arrThirdStage = [];
+const circlesFirstStage = document.querySelector('.first-stage');
+const circlesSecondStage = document.querySelector('.second-stage');
+const circlesThirdStage = document.querySelector('.third-stage');
+
 function collectDeck () {
-  let arr1 = collectFirstStage();
-  let arr2 = collectSecondStage();
-  let arr3 = collectThirdStage();
-  fc1.innerHTML = `${arr1[0].length}`;
-  fc2.innerHTML = `${arr1[1].length}`;
-  fc3.innerHTML = `${arr1[2].length}`;
-  fc4.innerHTML = `${arr2[0].length}`;
-  fc5.innerHTML = `${arr2[1].length}`;
-  fc6.innerHTML = `${arr2[2].length}`;
-  fc7.innerHTML = `${arr3[0].length}`;
-  fc8.innerHTML = `${arr3[1].length}`;
-  fc9.innerHTML = `${arr3[2].length}`;
-  let ar1 = arr1.flat(2);
+  arrFirstStage = collectFirstStage();
+  arrSecondStage = collectSecondStage();
+  arrThirdStage = collectThirdStage();
+  fc1.innerHTML = `${arrFirstStage[0].length}`;
+  fc2.innerHTML = `${arrFirstStage[1].length}`;
+  fc3.innerHTML = `${arrFirstStage[2].length}`;
+  fc4.innerHTML = `${arrSecondStage[0].length}`;
+  fc5.innerHTML = `${arrSecondStage[1].length}`;
+  fc6.innerHTML = `${arrSecondStage[2].length}`;
+  fc7.innerHTML = `${arrThirdStage[0].length}`;
+  fc8.innerHTML = `${arrThirdStage[1].length}`;
+  fc9.innerHTML = `${arrThirdStage[2].length}`;
+  let ar1 = arrFirstStage.flat(2);
   shuffle(ar1);
-  let ar2 = arr2.flat(2);
+  let ar2 = arrSecondStage.flat(2);
   shuffle(ar2);
-  let ar3 = arr3.flat(2);
+  let ar3 = arrThirdStage.flat(2);
   shuffle(ar3);
   lastCard.style.backgroundImage = `url(../eldritch-codejam/assets/mythicCardBackground.png)`;
   return finalDeck = ar1.concat(ar2, ar3);
 }
 
-shuffleDeck.addEventListener('click', collectDeck);
+shuffleDeck.addEventListener('click',collectDeck );
 //
 // LastCard
 const lastCard = document.querySelector('.last-card');
 
+function fillCircle(array, selector) {
+  // selector.children[0].innerHTML = `${array[0].length}`;
+  for (let i = 0; i <= 3; i++){
+    selector.children[i].innerHTML = `${array[i].length}`;
+  }
+}
+
 function showLastCard () {
+  console.log(arrFirstStage)
   let arr = finalDeck.shift();
   lastCard.style.backgroundImage = `url(${arr.cardFace})`;
   if (finalDeck.length === 0) {
-    lastCard.style.backgroundImage = `url(../eldritch-codejam/assets/no_card.jpg)`
+    // lastCard.style.backgroundImage = `url(../eldritch-codejam/assets/no_card.jpg)`;
+    document.location.reload();
   }
+  fillCircle(arrFirstStage, circlesFirstStage);
 }
 
 lastCard.addEventListener('click', showLastCard)
 //
+//Counter
+// const stage = document.querySelector('.dots-container');
+
+
+
+
+
 //Shuffle
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
