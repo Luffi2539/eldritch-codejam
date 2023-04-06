@@ -1,3 +1,5 @@
+Deploy: https://spectacular-cactus-16993b.netlify.app
+
 # Eldritch Horror Codejam
 
 ## Описание проекта
